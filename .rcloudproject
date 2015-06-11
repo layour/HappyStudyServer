@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BizProject META_DEF_ID="com.icss.ro.studio.bizfoundation.module.BizFoundationProject">
+  <id>402881ea4dc3438b014dc34394d20117</id>
+  <name>HappyStudyServer</name>
+  <description></description>
+  <alias>快乐学</alias>
+  <parent>402881ea4dc3438b014dc3438b0e0000</parent>
+  <version>6.0.1</version>
+  <location>\HappyStudyServer</location>
+  <params/>
+  <ref-components/>
+  <ref-resources/>
+  <basepackage>com.layou.study.server</basepackage>
+</BizProject>

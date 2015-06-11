@@ -1,0 +1,60 @@
+package ${javaInfo.getServicePackageName()};
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+#foreach( $type in ${javaInfo.getImportTypes()})
+import $type;
+#end
+
+@Service
+@Transactional
+public class ${javaInfo.getUpperServicename()} {
+
+	@Autowired
+	private ${javaInfo.getDaoFirstUpperName()} ${javaInfo.getDaoFirstLowerName()};
+	
+	/**
+	 * 按条件分页查询记录
+	 * @param searchParams 条件
+	 * @return
+	 */
+	public List<${javaInfo.getPoFirstUpperName()}> searchByPage(Map<String,Object> searchParams) {
+		return (List<${javaInfo.getPoFirstUpperName()}>) ${javaInfo.getDaoFirstLowerName()}.searchByPage(searchParams);
+	}
+
+	/**
+	 * 按条件查询记录
+	 * @param searchParams 条件
+	 * @return
+	 */
+	public List<${javaInfo.getPoFirstUpperName()}> search(Map<String,Object> searchParams) {
+		return (List<${javaInfo.getPoFirstUpperName()}>) ${javaInfo.getDaoFirstLowerName()}.search(searchParams);
+	}
+
+	/**
+	 * 获取所有记录
+	 * @return
+	 */
+	public List<${javaInfo.getPoFirstUpperName()}> findAll() {
+		return (List<${javaInfo.getPoFirstUpperName()}>) ${javaInfo.getDaoFirstLowerName()}.findAll();
+	}
+	
+	/**
+	 * 通过${javaInfo.getPoPKName()}获取一条记录
+	 * @param ${javaInfo.getPoPKFirstLowerName()} 查询实体主键
+	 * @return
+	 */
+	public ${javaInfo.getPoFirstUpperName()} findById(String ${javaInfo.getPoPKFirstLowerName()}) {
+		${javaInfo.getPoFirstUpperName()} ${javaInfo.getPoFirstLowerName()} = ${javaInfo.getDaoFirstLowerName()}.findById(${javaInfo.getPoPKFirstLowerName()});
+		if(${javaInfo.getPoFirstLowerName()} == null){
+			${javaInfo.getPoFirstLowerName()} = new ${javaInfo.getPoFirstUpperName()}();
+		}
+		return ${javaInfo.getPoFirstLowerName()};
+	}
+	
+}
