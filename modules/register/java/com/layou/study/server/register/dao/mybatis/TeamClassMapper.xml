@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.layou.study.server.register.dao.mybatis.TeamClassDao">
+  <!--查询一条记录-->
+  <select id="findById" resultMap="TeamClassMap">SELECT <include refid="columns"/> FROM HS_CLASS WHERE TEAM_CLASS_ID=#{teamClassId}</select>
+  <!--分页查询-->
+  <select id="searchByPage" parameterType="map" resultMap="TeamClassMap">SELECT <include refid="columns"/> FROM HS_CLASS
+    <where>
+      <if test="teamClassName != null and teamClassName != ''">TEAM_CLASS_NAME = #{teamClassName}</if>
+    </where>
+  </select>
+  <!--插入记录-->
+  <insert id="save" parameterType="TeamClass">INSERT INTO HS_CLASS (<include refid="columns"/>) VALUES (#{teamClassId},#{teamClassName})</insert>
+  <!--删除记录-->
+  <delete id="delete">DELETE FROM HS_CLASS WHERE TEAM_CLASS_ID=#{teamClassId}</delete>
+  <!--修改记录-->
+  <update id="update" parameterType="TeamClass">UPDATE HS_CLASS
+    <set>
+      <if test="teamClassName != null">TEAM_CLASS_NAME = #{teamClassName}, </if>
+    </set>WHERE TEAM_CLASS_ID=#{teamClassId}
+  </update>
+  <!--结果映射-->
+  <resultMap type="TeamClass" id="TeamClassMap">
+    <result column="TEAM_CLASS_ID" property="teamClassId"/>
+    <result column="TEAM_CLASS_NAME" property="teamClassName"/>
+  </resultMap>
+  <!--查询字段-->
+  <sql id="columns">TEAM_CLASS_ID,TEAM_CLASS_NAME</sql>
+</mapper>

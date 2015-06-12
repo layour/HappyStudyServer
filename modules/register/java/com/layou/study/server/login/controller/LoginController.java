@@ -45,21 +45,14 @@ public class LoginController {
 		String loginPwd = request.getParameter("loginPwd");//获取用户登录密码
 		
 		LoginInfoBean info = new LoginInfoBean();
-		if(loginName == null || "".equals(loginName)){//判断如果登录账号为空
-			info.setCode("2");
-			info.setMsg("登录名不能为空！");
-		}else if(loginPwd == null || "".equals(loginPwd)){//判断如果登录密码为空
-			info.setCode("3");
-			info.setMsg("密码不能为空！");
+		TregUser tregUser=new TregUser(loginName,loginPwd);
+		if(tregUser == null){//用户验证失败
+			info.setCode("1");
+			info.setMsg("用户名或密码错误！");
 		}else{
-			TregUser tregUser=new TregUser(loginName,loginPwd);
-			if(tregUser == null){//用户验证失败
-				info.setCode("2");
-				info.setMsg("用户名或密码错误！");
-			}else{
 //					this.session().setAttribute(LoginUtil.userKey, person);//把用户信息放到session中
-				info.setMsg("登录成功，欢迎您："+tregUser.getUserName()+"！");
-			}
+			info.setCode("0");
+			info.setMsg("登录成功，欢迎您："+tregUser.getUserName()+"！");
 		}
 		return info;
 	}

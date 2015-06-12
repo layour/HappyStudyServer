@@ -257,7 +257,7 @@
 </form>
 </viewModel>
 </entity>
-<entity author="" description="" displayName="班级" entityType="persistent" genStrategy="uuid" id="8a82f0bd4db21e5c014db370c5bf0077" isSetViewModel="false" name="TeamClass" schema="" tableName="HS_CLASS">
+<entity author="" description="" displayName="班级" entityType="persistent" genStrategy="uuid" id="8a82f0bd4db21e5c014db370c5bf0077" isSetViewModel="true" name="TeamClass" schema="" tableName="HS_CLASS">
 <location height="74" wide="233" x="29" y="13"/>
 <fields>
 <field FK="false" PK="true" columnName="TEAM_CLASS_ID" columnType="" default="" description="" displayName="班级ID" fieldName="teamClassId" fieldType="java.lang.String" id="402881ea4db9088d014db9bfdc5500c1" length="" nullAble="true" persistent="true" precision="">
@@ -270,10 +270,38 @@
 <relations/>
 <refVentityFields/>
 <viewModel>
-<queryForm exportExcel="false" id="8a82f0a84db7422d014db74737440086" isDistinct="false" isTotalRows="false" orderFields="" orders="" pageSize="15" title=""/>
-<queryResult id="8a82f0a84db7422d014db74737440087" rowSelectType="checkbox" title=""/>
-<detailInfo id="8a82f0a84db7422d014db74737440089" showType="" title=""/>
-<form id="8a82f0a84db7422d014db74737440088" showType="" title=""/>
+<queryForm exportExcel="false" id="8a82f0a84db7422d014db74737440086" isDistinct="false" isTotalRows="false" orderFields="teamClassName" orders="asc" pageSize="15" title="">
+<queryField columnSpan="0" displayName="班级名称" fieldId="8a82f0bd4db21e5c014db370bee60075" fieldName="teamClassName" fieldType="java.lang.String" index="0" operator="=" rowSpan="0">
+<tag type="text">
+<attr attrValue="teamClassName" defaultValue="" name="name" type="property"/>
+<attr attrValue="teamClassName" defaultValue="" name="id" type="property"/>
+</tag>
+</queryField>
+</queryForm>
+<queryResult id="8a82f0a84db7422d014db74737440087" rowSelectType="checkbox" title="查询班级">
+<listField displayName="班级名称" fieldId="8a82f0bd4db21e5c014db370bee60075" fieldName="teamClassName" fieldType="java.lang.String" index="0" width="">
+<tag type="text">
+<attr attrValue="teamClassName" defaultValue="" name="name" type="property"/>
+<attr attrValue="teamClassName" defaultValue="" name="id" type="property"/>
+</tag>
+</listField>
+</queryResult>
+<detailInfo id="8a82f0a84db7422d014db74737440089" showType="" title="班级详细">
+<showField displayName="班级名称" fieldId="8a82f0bd4db21e5c014db370bee60075" fieldName="teamClassName" fieldType="java.lang.String" index="0">
+<tag type="text">
+<attr attrValue="teamClassName" defaultValue="" name="name" type="property"/>
+<attr attrValue="teamClassName" defaultValue="" name="id" type="property"/>
+</tag>
+</showField>
+</detailInfo>
+<form id="8a82f0a84db7422d014db74737440088" showType="" title="添加班级">
+<addField displayName="班级名称" fieldId="8a82f0bd4db21e5c014db370bee60075" fieldName="teamClassName" fieldType="java.lang.String" index="0" isDisplay="true">
+<tag type="text">
+<attr attrValue="teamClassName" defaultValue="" name="name" type="property"/>
+<attr attrValue="teamClassName" defaultValue="" name="id" type="property"/>
+</tag>
+</addField>
+</form>
 </viewModel>
 </entity>
 <entity author="" description="" displayName="签到" entityType="persistent" genStrategy="uuid" id="8a82f0bd4db21e5c014db375cbdb0081" isSetViewModel="true" name="CheckIn" schema="" tableName="HS_CHECK">
