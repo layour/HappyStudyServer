@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.layou.study.server.checkin.dao.mybatis.CheckInDao">
+  <!--查询一条记录-->
+  <select id="findById" resultMap="CheckInMap">SELECT <include refid="columns"/> FROM HS_CHECK WHERE CHECK_ID=#{checkId}</select>
+  <!--查询所有记录-->
+  <select id="findAll" resultMap="CheckInMap">SELECT <include refid="columns"/> FROM HS_CHECK</select>
+  <!--按条件查询-->
+  <select id="search" parameterType="map" resultMap="CheckInMap">SELECT <include refid="columns"/> FROM HS_CHECK
+    <where/>
+  </select>
+  <!--分页查询-->
+  <select id="searchByPage" parameterType="map" resultMap="CheckInMap">SELECT <include refid="columns"/> FROM HS_CHECK
+    <where/>
+  </select>
+  <!--插入记录-->
+  <insert id="save" parameterType="CheckIn">INSERT INTO HS_CHECK (<include refid="columns"/>) VALUES (#{checkId},#{checkTime},#{checkAddr},#{checkType},#{userId})</insert>
+  <!--删除记录-->
+  <delete id="delete">DELETE FROM HS_CHECK WHERE CHECK_ID=#{checkId}</delete>
+  <!--修改记录-->
+  <update id="update" parameterType="CheckIn">UPDATE HS_CHECK
+    <set>
+      <if test="checkTime != null">CHECK_TIME = #{checkTime}, </if>
+      <if test="checkAddr != null">CHECK_ADDR = #{checkAddr}, </if>
+      <if test="checkType != null">CHECK_TYPE = #{checkType}, </if>
+      <if test="userId != null">USER_ID = #{userId}, </if>
+    </set>WHERE CHECK_ID=#{checkId}
+  </update>
+  <!--结果映射-->
+  <resultMap type="CheckIn" id="CheckInMap">
+    <result column="CHECK_ID" property="checkId"/>
+    <result column="CHECK_TIME" property="checkTime"/>
+    <result column="CHECK_ADDR" property="checkAddr"/>
+    <result column="CHECK_TYPE" property="checkType"/>
+    <result column="USER_ID" property="userId"/>
+  </resultMap>
+  <!--查询字段-->
+  <sql id="columns">CHECK_ID,CHECK_TIME,CHECK_ADDR,CHECK_TYPE,USER_ID</sql>
+</mapper>

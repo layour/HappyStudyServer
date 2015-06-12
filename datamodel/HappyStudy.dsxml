@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <dataset author="HappyStudy.dsxml" displayName="" name="HappyStudy.dsxml">
 <entity author="" description="" displayName="用户" entityType="persistent" genStrategy="uuid" id="8a82f0bd4db21e5c014db3602220006d" isSetViewModel="true" name="User" schema="" tableName="HS_USER">
-<location height="268" wide="240" x="511" y="11"/>
+<location height="268" wide="240" x="271" y="11"/>
 <fields>
 <field FK="false" PK="true" columnName="USER_ID" columnType="" default="" description="" displayName="用户ID" fieldName="userId" fieldType="java.lang.String" id="402881ea4db9088d014db9b46bc000b7" length="" nullAble="true" persistent="true" precision="">
 <refVentityFields/>
@@ -258,7 +258,7 @@
 </viewModel>
 </entity>
 <entity author="" description="" displayName="班级" entityType="persistent" genStrategy="uuid" id="8a82f0bd4db21e5c014db370c5bf0077" isSetViewModel="false" name="TeamClass" schema="" tableName="HS_CLASS">
-<location height="74" wide="233" x="269" y="13"/>
+<location height="74" wide="233" x="29" y="13"/>
 <fields>
 <field FK="false" PK="true" columnName="TEAM_CLASS_ID" columnType="" default="" description="" displayName="班级ID" fieldName="teamClassId" fieldType="java.lang.String" id="402881ea4db9088d014db9bfdc5500c1" length="" nullAble="true" persistent="true" precision="">
 <refVentityFields/>
@@ -276,8 +276,8 @@
 <form id="8a82f0a84db7422d014db74737440088" showType="" title=""/>
 </viewModel>
 </entity>
-<entity author="" description="" displayName="签到" entityType="persistent" genStrategy="uuid" id="8a82f0bd4db21e5c014db375cbdb0081" isSetViewModel="false" name="CheckIn" schema="" tableName="HS_CHECK">
-<location height="113" wide="220" x="8" y="14"/>
+<entity author="" description="" displayName="签到" entityType="persistent" genStrategy="uuid" id="8a82f0bd4db21e5c014db375cbdb0081" isSetViewModel="true" name="CheckIn" schema="" tableName="HS_CHECK">
+<location height="128" wide="220" x="524" y="10"/>
 <fields>
 <field FK="false" PK="true" columnName="CHECK_ID" columnType="" default="" description="" displayName="签到ID" fieldName="checkId" fieldType="java.lang.String" id="8a82f0bd4db21e5c014db375b061007d" length="" nullAble="true" persistent="true" precision="">
 <refVentityFields/>
@@ -291,18 +291,78 @@
 <field FK="false" PK="false" columnName="CHECK_TYPE" columnType="" default="" description="" displayName="签到类型" fieldName="checkType" fieldType="java.lang.String" id="8a82f0bd4db21e5c014db375b0610080" length="" nullAble="false" persistent="true" precision="">
 <refVentityFields/>
 </field>
+<field FK="false" PK="false" columnName="USER_ID" columnType="" default="" description="" displayName="用户ID" fieldName="userId" fieldType="java.lang.String" id="8a82f0cc4de65479014de659e56401e6" length="" nullAble="false" persistent="true" precision="">
+<refVentityFields/>
+</field>
 </fields>
 <relations/>
 <refVentityFields/>
 <viewModel>
-<queryForm exportExcel="false" id="8a82f0a84db7422d014db7473744008a" isDistinct="false" isTotalRows="false" orderFields="" orders="" pageSize="15" title=""/>
-<queryResult id="8a82f0a84db7422d014db7473744008b" rowSelectType="checkbox" title=""/>
-<detailInfo id="8a82f0a84db7422d014db7473744008d" showType="" title=""/>
-<form id="8a82f0a84db7422d014db7473744008c" showType="" title=""/>
+<queryForm exportExcel="false" id="8a82f0a84db7422d014db7473744008a" isDistinct="false" isTotalRows="false" orderFields="checkTime" orders="asc" pageSize="15" title=""/>
+<queryResult id="8a82f0a84db7422d014db7473744008b" rowSelectType="checkbox" title="签到查询">
+<listField displayName="签到时间" fieldId="8a82f0bd4db21e5c014db375b061007e" fieldName="checkTime" fieldType="java.lang.String" index="0" width="">
+<tag type="text">
+<attr attrValue="checkTime" defaultValue="" name="name" type="property"/>
+<attr attrValue="checkTime" defaultValue="" name="id" type="property"/>
+</tag>
+</listField>
+<listField displayName="签到地点" fieldId="8a82f0bd4db21e5c014db375b061007f" fieldName="checkAddr" fieldType="java.lang.String" index="0" width="">
+<tag type="text">
+<attr attrValue="checkAddr" defaultValue="" name="name" type="property"/>
+<attr attrValue="checkAddr" defaultValue="" name="id" type="property"/>
+</tag>
+</listField>
+<listField displayName="签到类型" fieldId="8a82f0bd4db21e5c014db375b0610080" fieldName="checkType" fieldType="java.lang.String" index="0" width="">
+<tag type="text">
+<attr attrValue="checkType" defaultValue="" name="name" type="property"/>
+<attr attrValue="checkType" defaultValue="" name="id" type="property"/>
+</tag>
+</listField>
+</queryResult>
+<detailInfo id="8a82f0a84db7422d014db7473744008d" showType="" title="签到列表">
+<showField displayName="签到时间" fieldId="8a82f0bd4db21e5c014db375b061007e" fieldName="checkTime" fieldType="java.lang.String" index="0" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
+<tag type="text">
+<attr attrValue="checkTime" defaultValue="" name="name" type="property"/>
+<attr attrValue="checkTime" defaultValue="" name="id" type="property"/>
+</tag>
+</showField>
+<showField displayName="签到地点" fieldId="8a82f0bd4db21e5c014db375b061007f" fieldName="checkAddr" fieldType="java.lang.String" index="0" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
+<tag type="text">
+<attr attrValue="checkAddr" defaultValue="" name="name" type="property"/>
+<attr attrValue="checkAddr" defaultValue="" name="id" type="property"/>
+</tag>
+</showField>
+<showField displayName="签到类型" fieldId="8a82f0bd4db21e5c014db375b0610080" fieldName="checkType" fieldType="java.lang.String" index="0" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
+<tag type="text">
+<attr attrValue="checkType" defaultValue="" name="name" type="property"/>
+<attr attrValue="checkType" defaultValue="" name="id" type="property"/>
+</tag>
+</showField>
+</detailInfo>
+<form id="8a82f0a84db7422d014db7473744008c" showType="" title="记录签到">
+<addField displayName="签到时间" fieldId="8a82f0bd4db21e5c014db375b061007e" fieldName="checkTime" fieldType="java.lang.String" index="0" isDisplay="true" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
+<tag type="text">
+<attr attrValue="checkTime" defaultValue="" name="name" type="property"/>
+<attr attrValue="checkTime" defaultValue="" name="id" type="property"/>
+</tag>
+</addField>
+<addField displayName="签到地点" fieldId="8a82f0bd4db21e5c014db375b061007f" fieldName="checkAddr" fieldType="java.lang.String" index="0" isDisplay="true" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
+<tag type="text">
+<attr attrValue="checkAddr" defaultValue="" name="name" type="property"/>
+<attr attrValue="checkAddr" defaultValue="" name="id" type="property"/>
+</tag>
+</addField>
+<addField displayName="签到类型" fieldId="8a82f0bd4db21e5c014db375b0610080" fieldName="checkType" fieldType="java.lang.String" index="0" isDisplay="true" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
+<tag type="text">
+<attr attrValue="checkType" defaultValue="" name="name" type="property"/>
+<attr attrValue="checkType" defaultValue="" name="id" type="property"/>
+</tag>
+</addField>
+</form>
 </viewModel>
 </entity>
 <entity author="" description="" displayName="意见反馈" entityType="persistent" genStrategy="uuid" id="8a82f0bd4db21e5c014db37a9835008b" isSetViewModel="false" name="Opinion" schema="" tableName="HS_OPINION">
-<location height="114" wide="220" x="7" y="136"/>
+<location height="128" wide="220" x="31" y="95"/>
 <fields>
 <field FK="false" PK="true" columnName="OPINION_ID" columnType="" default="" description="" displayName="意见反馈ID" fieldName="opinionId" fieldType="java.lang.String" id="8a82f0bd4db21e5c014db37a93ab0087" length="" nullAble="true" persistent="true" precision="">
 <refVentityFields/>
@@ -316,6 +376,9 @@
 <field FK="false" PK="false" columnName="OPINION_TIME" columnType="" default="" description="" displayName="反馈时间" fieldName="opinionTime" fieldType="java.lang.String" id="8a82f0bd4db21e5c014db37a93ab008a" length="" nullAble="false" persistent="true" precision="">
 <refVentityFields/>
 </field>
+<field FK="false" PK="false" columnName="USER_ID" columnType="" default="" description="" displayName="用户ID" fieldName="userId" fieldType="java.lang.String" id="8a82f0cc4de65479014de65a8e9c01e8" length="" nullAble="false" persistent="true" precision="">
+<refVentityFields/>
+</field>
 </fields>
 <relations/>
 <refVentityFields/>
@@ -327,7 +390,7 @@
 </viewModel>
 </entity>
 <entity author="" description="" displayName="试卷" entityType="persistent" genStrategy="uuid" id="8a82f0bd4db21e5c014db3820bc00097" isSetViewModel="false" name="Paper" schema="" tableName="HS_PAPER">
-<location height="128" wide="220" x="512" y="468"/>
+<location height="128" wide="220" x="272" y="468"/>
 <fields>
 <field FK="false" PK="true" columnName="PAPER_ID" columnType="" default="" description="" displayName="试卷ID" fieldName="paperId" fieldType="java.lang.String" id="402881ea4db9088d014db9c156bc00c3" length="" nullAble="true" persistent="true" precision="">
 <refVentityFields/>
@@ -355,7 +418,7 @@
 </viewModel>
 </entity>
 <entity author="" description="" displayName="考试记录" entityType="persistent" genStrategy="uuid" id="8a82f0bd4db21e5c014db384cdbe00a1" isSetViewModel="false" name="ExamRecord" schema="" tableName="HS_EXAM_RECORD">
-<location height="150" wide="230" x="765" y="383"/>
+<location height="150" wide="230" x="525" y="383"/>
 <fields>
 <field FK="false" PK="true" columnName="EXAM_RECORD_ID" columnType="" default="" description="" displayName="考试记录ID" fieldName="examRecordId" fieldType="java.lang.String" id="8a82f0bd4db21e5c014db384cb62009d" length="" nullAble="true" persistent="true" precision="">
 <refVentityFields/>
@@ -386,7 +449,7 @@
 </viewModel>
 </entity>
 <entity author="" description="" displayName="题目" entityType="persistent" genStrategy="uuid" id="8a82f0bd4db21e5c014db3bca98100b5" isSetViewModel="false" name="Topic" schema="" tableName="HS_TOPIC">
-<location height="169" wide="220" x="512" y="288"/>
+<location height="169" wide="220" x="272" y="288"/>
 <fields>
 <field FK="false" PK="true" columnName="TOPIC_ID" columnType="" default="" description="" displayName="题目ID" fieldName="topicId" fieldType="java.lang.String" id="402881ea4db9088d014db9c2f66300c5" length="" nullAble="true" persistent="true" precision="">
 <refVentityFields/>
@@ -420,7 +483,7 @@
 </viewModel>
 </entity>
 <entity author="" description="" displayName="做题记录" entityType="persistent" genStrategy="uuid" id="402881ea4db9088d014db99406790095" isSetViewModel="false" name="TopicRecord" schema="" tableName="HS_TOPIC_RECORD">
-<location height="149" wide="232" x="763" y="222"/>
+<location height="149" wide="232" x="523" y="222"/>
 <fields>
 <field FK="false" PK="true" columnName="TOPIC_RECORD_ID" columnType="" default="" description="" displayName="做题记录ID" fieldName="topicRecordId" fieldType="java.lang.String" id="402881ea4db9088d014db991d516008e" length="" nullAble="true" persistent="true" precision="">
 <refVentityFields/>
@@ -451,7 +514,7 @@
 </viewModel>
 </entity>
 <entity author="" description="" displayName="用户题目" entityType="persistent" genStrategy="uuid" id="402881ea4db9088d014db9aafff000b1" isSetViewModel="false" name="UserTopic" schema="" tableName="HS_USER_TOPIC">
-<location height="112" wide="230" x="273" y="236"/>
+<location height="112" wide="230" x="33" y="236"/>
 <fields>
 <field FK="false" PK="true" columnName="USER_TOPIC_ID" columnType="" default="" description="" displayName="用户题目ID" fieldName="userTopicId" fieldType="java.lang.String" id="402881ea4db9088d014db9bd523800bb" length="" nullAble="true" persistent="true" precision="">
 <refVentityFields/>
@@ -476,7 +539,7 @@
 </viewModel>
 </entity>
 <entity author="" description="" displayName="试卷题目" entityType="persistent" genStrategy="uuid" id="8a82f0a64dbc153a014dbc1b402400ea" isSetViewModel="false" name="PaperTopic" schema="" tableName="HS_PAPER_TOPIC">
-<location height="91" wide="232" x="270" y="425"/>
+<location height="91" wide="232" x="30" y="425"/>
 <fields>
 <field FK="false" PK="true" columnName="PAPER_TOPIC_ID" columnType="" default="" description="" displayName="试卷题目ID" fieldName="paperTopicId" fieldType="java.lang.String" id="8a82f0a64dbc153a014dbc2519c100f4" length="" nullAble="true" persistent="true" precision="">
 <refVentityFields/>

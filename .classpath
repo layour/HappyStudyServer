@@ -70,5 +70,7 @@
 	<classpathentry kind="lib" path="WebApp/WEB-INF/lib/xml-apis-1.0.b2.jar"/>
 	<classpathentry kind="src" output="WebApp/WEB-INF/classes" path="modules/register/java"/>
 	<classpathentry kind="src" output="testcase/test-classes" path="testcase/test-java/register/java"/>
+	<classpathentry kind="src" output="WebApp/WEB-INF/classes" path="modules/checkin/java"/>
+	<classpathentry kind="src" output="testcase/test-classes" path="testcase/test-java/checkin/java"/>
 	<classpathentry kind="output" path="WebApp/WEB-INF/classes"/>
 </classpath>
