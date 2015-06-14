@@ -57,6 +57,19 @@ public class UserService {
 		}
 		return user;
 	}
+	
+	/**
+	 * 通过phoneNo获取一条记录
+	 * @param phoneNo 唯一约束
+	 * @return
+	 */
+	public User findByPhoneNo(String phoneNo) {
+		User user = userDao.findByPhoneNo(phoneNo);
+		if(user == null){
+			user = new User();
+		}
+		return user;
+	}
 
 	/**
 	 * 保存一条记录

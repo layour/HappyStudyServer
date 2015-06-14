@@ -52,7 +52,7 @@
 	                <th data-options="field:'city',width:80">城市</th>
 	                <th data-options="field:'teamType',width:80">班型</th>
 	                <th data-options="field:'role',width:80">角色</th>
-	                <th data-options="field:'teamClassId',width:80">班级ID</th>
+	                <th data-options="field:'teamClass',width:80">班级ID</th>
 	                <th data-options="field:'id',width:80,formatter:format_manager">管理</th>
 	            </tr>
 	        </thead>

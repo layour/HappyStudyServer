@@ -1,5 +1,6 @@
 package com.layou.study.server.register.controller;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -73,6 +74,38 @@ public class UserController {
 	}
 	
 	/**
+	 * 登录验证
+	 * @param pageNumber
+	 * @param pageSize
+	 * @param sortType
+	 * @param model
+	 * @param request
+	 * @return
+	 */
+	@RequestMappingName(value = "登录")
+	@RequestMapping(value="login", method = { RequestMethod.GET,RequestMethod.POST },produces = "application/json; charset=utf-8")
+	@ResponseBody
+	public String login(Model model, ServletRequest request) {
+		
+		String loginName = request.getParameter("loginName");//获取用户登录账号
+		String loginPwd = request.getParameter("loginPwd");//获取用户登录密码
+		
+		Map<String, Object> result = new HashMap<String, Object>();
+		
+		User user = userService.findByPhoneNo(loginName);
+		if(loginPwd.equals(user.getPassword())){
+			result.put("code", "0");
+			result.put("msg", "登录成功");
+			result.put("user", user);
+		} else {
+			result.put("code", "1");
+			result.put("msg", "用户名或密码错误");
+		}
+		
+		return new JacksonUtil().getJson(result);
+	}
+	
+	/**
 	 * 跳转到增加页面
 	 * @return
 	 */
@@ -93,6 +126,25 @@ public class UserController {
 	public String save(@Valid User user, RedirectAttributes redirectAttributes) {
 		userService.save(user);
 		return "register/user/userList";
+	}
+	
+	/**
+	 * 执行保存操作
+	 * @param user
+	 * @param redirectAttributes
+	 * @return
+	 */
+	@RequestMappingName(value = "移动保存")
+	@RequestMapping(value="mobileSave", method = { RequestMethod.GET,RequestMethod.POST },produces = "application/json; charset=utf-8")  
+	@ResponseBody
+	public String mobileSave(@Valid User user, Model model) {
+		userService.save(user);
+		
+		Map<String, String> result = new HashMap<String, String>();
+		result.put("code", "0");
+		result.put("msg", "注册成功");
+		
+		return new JacksonUtil().getJson(result);
 	}
 	
 	/**

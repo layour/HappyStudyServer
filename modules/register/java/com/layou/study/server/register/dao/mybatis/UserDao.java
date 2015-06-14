@@ -36,11 +36,18 @@ public interface UserDao {
 	List<User> findAll();
 	
 	/**
+	 * 通过 phoneNo 获取一条记录
+	 * @param phoneNo 唯一约束
+	 * @return
+	 */
+	User findById(String userId);
+	
+	/**
 	 * 通过 userId 获取一条记录
 	 * @param userId 主键
 	 * @return
 	 */
-	User findById(String userId);
+	User findByPhoneNo(String phoneNo);
 	
 	/**
 	 * 保存一条记录

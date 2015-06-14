@@ -23,7 +23,7 @@ public class User extends DomainBase implements Serializable{
 	private String city;
 	private String teamType;
 	private String role;
-	private String teamClassId;
+	private String teamClass;
 
 	public User() {
 		super();
@@ -117,12 +117,12 @@ public class User extends DomainBase implements Serializable{
 		this.role = role;
 	}
 
-	public String getTeamClassId() {
-		return this.teamClassId;
+	public String getTeamClass() {
+		return this.teamClass;
 	}
 
-	public void setTeamClassId(String teamClassId) {
-		this.teamClassId = teamClassId;
+	public void setTeamClass(String teamClass) {
+		this.teamClass = teamClass;
 	}
 
 	@Override

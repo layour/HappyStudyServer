@@ -68,7 +68,7 @@
     			</tr>
     			<tr class="control-group">
     				<td>班级ID：</td>
-    				<td><input id="teamClassId" name="teamClassId" type="text" class="text"/></td>
+    				<td><input id="teamClass" name="teamClass" type="text" class="text"/></td>
     			</tr>
     			<tr class="form-actions">
 					<td colspan="2" align="center">

@@ -1,0 +1,18 @@
+package com.layou.study.server.checkin.util;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class DateTimeUtil {
+
+	public static String getDateTime(){
+		Date date = new Date();
+		DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置显示格式
+		return df.format(date);
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(getDateTime());
+	}
+}

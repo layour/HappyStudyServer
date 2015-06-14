@@ -58,7 +58,7 @@
 			</tr>
 			<tr>
 				<td>班级ID：</td>
-				<td><input name="teamClassId" value="${user.teamClassId}" class="easyui-validatebox textbox" disabled="disabled" /></td>
+				<td><input name="teamClass" value="${user.teamClass}" class="easyui-validatebox textbox" disabled="disabled" /></td>
 			</tr>
         	<tr>
 				<td colspan="2" align="center">

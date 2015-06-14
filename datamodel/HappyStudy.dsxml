@@ -36,7 +36,7 @@
 <field FK="false" PK="false" columnName="ROLE" columnType="" default="" description="" displayName="角色" fieldName="role" fieldType="java.lang.String" id="8a82f0a84db7422d014db74730400081" length="" nullAble="false" persistent="true" precision="">
 <refVentityFields/>
 </field>
-<field FK="false" PK="false" columnName="TEAM_CLASS_ID" columnType="" default="" description="" displayName="班级ID" fieldName="teamClassId" fieldType="java.lang.String" id="8a82f0bd4db21e5c014db3601aa2006c" length="" nullAble="false" persistent="true" precision="">
+<field FK="false" PK="false" columnName="TEAM_CLASS" columnType="" default="" description="" displayName="班级" fieldName="teamClass" fieldType="java.lang.String" id="8a82f0bd4db21e5c014db3601aa2006c" length="" nullAble="false" persistent="true" precision="">
 <refVentityFields/>
 </field>
 </fields>
@@ -112,10 +112,10 @@
 <attr attrValue="role" defaultValue="" name="id" type="property"/>
 </tag>
 </listField>
-<listField displayName="班级ID" fieldId="8a82f0bd4db21e5c014db3601aa2006c" fieldName="teamClassId" fieldType="java.lang.String" index="0" width="">
+<listField displayName="班级ID" fieldId="8a82f0bd4db21e5c014db3601aa2006c" fieldName="teamClass" fieldType="java.lang.String" index="0" width="">
 <tag type="text">
-<attr attrValue="teamClassId" defaultValue="" name="name" type="property"/>
-<attr attrValue="teamClassId" defaultValue="" name="id" type="property"/>
+<attr attrValue="teamClass" defaultValue="" name="name" type="property"/>
+<attr attrValue="teamClass" defaultValue="" name="id" type="property"/>
 </tag>
 </listField>
 </queryResult>
@@ -180,10 +180,10 @@
 <attr attrValue="role" defaultValue="" name="id" type="property"/>
 </tag>
 </showField>
-<showField displayName="班级ID" fieldId="8a82f0bd4db21e5c014db3601aa2006c" fieldName="teamClassId" fieldType="java.lang.String" index="0" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
+<showField displayName="班级ID" fieldId="8a82f0bd4db21e5c014db3601aa2006c" fieldName="teamClass" fieldType="java.lang.String" index="0" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
-<attr attrValue="teamClassId" defaultValue="" name="name" type="property"/>
-<attr attrValue="teamClassId" defaultValue="" name="id" type="property"/>
+<attr attrValue="teamClass" defaultValue="" name="name" type="property"/>
+<attr attrValue="teamClass" defaultValue="" name="id" type="property"/>
 </tag>
 </showField>
 </detailInfo>
@@ -248,10 +248,10 @@
 <attr attrValue="role" defaultValue="" name="id" type="property"/>
 </tag>
 </addField>
-<addField displayName="班级ID" fieldId="8a82f0bd4db21e5c014db3601aa2006c" fieldName="teamClassId" fieldType="java.lang.String" index="0" isDisplay="true" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
+<addField displayName="班级ID" fieldId="8a82f0bd4db21e5c014db3601aa2006c" fieldName="teamClass" fieldType="java.lang.String" index="0" isDisplay="true" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
-<attr attrValue="teamClassId" defaultValue="" name="name" type="property"/>
-<attr attrValue="teamClassId" defaultValue="" name="id" type="property"/>
+<attr attrValue="teamClass" defaultValue="" name="name" type="property"/>
+<attr attrValue="teamClass" defaultValue="" name="id" type="property"/>
 </tag>
 </addField>
 </form>
@@ -287,7 +287,7 @@
 </listField>
 </queryResult>
 <detailInfo id="8a82f0a84db7422d014db74737440089" showType="" title="班级详细">
-<showField displayName="班级名称" fieldId="8a82f0bd4db21e5c014db370bee60075" fieldName="teamClassName" fieldType="java.lang.String" index="0">
+<showField displayName="班级名称" fieldId="8a82f0bd4db21e5c014db370bee60075" fieldName="teamClassName" fieldType="java.lang.String" index="0" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="teamClassName" defaultValue="" name="name" type="property"/>
 <attr attrValue="teamClassName" defaultValue="" name="id" type="property"/>
@@ -295,7 +295,7 @@
 </showField>
 </detailInfo>
 <form id="8a82f0a84db7422d014db74737440088" showType="" title="添加班级">
-<addField displayName="班级名称" fieldId="8a82f0bd4db21e5c014db370bee60075" fieldName="teamClassName" fieldType="java.lang.String" index="0" isDisplay="true">
+<addField displayName="班级名称" fieldId="8a82f0bd4db21e5c014db370bee60075" fieldName="teamClassName" fieldType="java.lang.String" index="0" isDisplay="true" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="teamClassName" defaultValue="" name="name" type="property"/>
 <attr attrValue="teamClassName" defaultValue="" name="id" type="property"/>

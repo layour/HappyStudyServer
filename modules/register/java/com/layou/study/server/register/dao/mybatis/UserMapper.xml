@@ -4,22 +4,16 @@
 <mapper namespace="com.layou.study.server.register.dao.mybatis.UserDao">
   <!--查询一条记录-->
   <select id="findById" resultMap="UserMap">SELECT <include refid="columns"/> FROM HS_USER WHERE USER_ID=#{userId}</select>
-  <!--查询所有记录-->
-  <select id="findAll" resultMap="UserMap">SELECT <include refid="columns"/> FROM HS_USER</select>
-  <!--按条件查询-->
-  <select id="search" parameterType="map" resultMap="UserMap">SELECT <include refid="columns"/> FROM HS_USER
-    <where>
-      <if test="phoneNo != null and phoneNo != ''">PHONE_NO LIKE CONCAT('%',#{phoneNo},'%')</if>
-    </where>
-  </select>
+  <!--查询一条记录-->
+  <select id="findByPhoneNo" resultMap="UserMap">SELECT <include refid="columns"/> FROM HS_USER WHERE PHONE_NO=#{phoneNo}</select>
   <!--分页查询-->
   <select id="searchByPage" parameterType="map" resultMap="UserMap">SELECT <include refid="columns"/> FROM HS_USER
     <where>
-      <if test="phoneNo != null and phoneNo != ''">PHONE_NO LIKE CONCAT('%',#{phoneNo},'%')</if>
+      <if test="phoneNo != null and phoneNo != ''">PHONE_NO = #{phoneNo}</if>
     </where>
   </select>
   <!--插入记录-->
-  <insert id="save" parameterType="User">INSERT INTO HS_USER (<include refid="columns"/>) VALUES (#{userId},#{phoneNo},#{password},#{userName},#{sex},#{idNo},#{referrerNo},#{referrerPhoneNo},#{city},#{teamType},#{role},#{teamClassId})</insert>
+  <insert id="save" parameterType="User">INSERT INTO HS_USER (<include refid="columns"/>) VALUES (#{userId},#{phoneNo},#{password},#{userName},#{sex},#{idNo},#{referrerNo},#{referrerPhoneNo},#{city},#{teamType},#{role},#{teamClass})</insert>
   <!--删除记录-->
   <delete id="delete">DELETE FROM HS_USER WHERE USER_ID=#{userId}</delete>
   <!--修改记录-->
@@ -35,7 +29,7 @@
       <if test="city != null">CITY = #{city}, </if>
       <if test="teamType != null">TEAM_TYPE = #{teamType}, </if>
       <if test="role != null">ROLE = #{role}, </if>
-      <if test="teamClassId != null">TEAM_CLASS_ID = #{teamClassId}, </if>
+      <if test="teamClass != null">TEAM_CLASS = #{teamClass}, </if>
     </set>WHERE USER_ID=#{userId}
   </update>
   <!--结果映射-->
@@ -51,8 +45,8 @@
     <result column="CITY" property="city"/>
     <result column="TEAM_TYPE" property="teamType"/>
     <result column="ROLE" property="role"/>
-    <result column="TEAM_CLASS_ID" property="teamClassId"/>
+    <result column="TEAM_CLASS" property="teamClass"/>
   </resultMap>
   <!--查询字段-->
-  <sql id="columns">USER_ID,PHONE_NO,PASSWORD,USER_NAME,SEX,ID_NO,REFERRER_NO,REFERRER_PHONE_NO,CITY,TEAM_TYPE,ROLE,TEAM_CLASS_ID</sql>
+  <sql id="columns">USER_ID,PHONE_NO,PASSWORD,USER_NAME,SEX,ID_NO,REFERRER_NO,REFERRER_PHONE_NO,CITY,TEAM_TYPE,ROLE,TEAM_CLASS</sql>
 </mapper>

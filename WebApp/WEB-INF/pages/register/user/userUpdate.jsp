@@ -69,7 +69,7 @@
     			</tr>
     			<tr>
 					<td>班级ID：</td>
-    				<td><input id="teamClassId" name="teamClassId" type="text" class="text" value="${user.teamClassId}"/></td>
+    				<td><input id="teamClass" name="teamClass" type="text" class="text" value="${user.teamClass}"/></td>
     			</tr>
     			<tr>
     				<td colspan="2" align="center">

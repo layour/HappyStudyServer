@@ -1,5 +1,6 @@
 package com.layou.study.server.checkin.controller;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -20,6 +21,7 @@ import org.springside.modules.web.Servlets;
 
 import com.layou.study.server.checkin.domain.*;
 import com.layou.study.server.checkin.service.*;
+import com.layou.study.server.checkin.util.DateTimeUtil;
 
 import core.mybatis.PageParameter;
 import core.spring.RequestMappingName;
@@ -93,6 +95,27 @@ public class CheckInController {
 	public String save(@Valid CheckIn checkIn, RedirectAttributes redirectAttributes) {
 		checkInService.save(checkIn);
 		return "checkin/checkIn/checkInList";
+	}
+	
+	/**
+	 * 执行保存操作
+	 * @param checkIn
+	 * @param redirectAttributes
+	 * @return
+	 */
+	@RequestMappingName(value = "移动保存")
+	@RequestMapping(value="mobileSave", method = { RequestMethod.GET,RequestMethod.POST },produces = "application/json; charset=utf-8")  
+	@ResponseBody
+	public String mobileSave(@Valid CheckIn checkIn) {
+		checkIn.setCheckTime(DateTimeUtil.getDateTime());
+		
+		checkInService.save(checkIn);
+		
+		Map<String, String> result = new HashMap<String, String>();
+		result.put("code", "0");
+		result.put("msg", "注册成功");
+		
+		return new JacksonUtil().getJson(result);
 	}
 	
 	/**
