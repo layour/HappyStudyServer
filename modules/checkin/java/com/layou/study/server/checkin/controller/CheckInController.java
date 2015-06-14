@@ -107,13 +107,21 @@ public class CheckInController {
 	@RequestMapping(value="mobileSave", method = { RequestMethod.GET,RequestMethod.POST },produces = "application/json; charset=utf-8")  
 	@ResponseBody
 	public String mobileSave(@Valid CheckIn checkIn) {
-		checkIn.setCheckTime(DateTimeUtil.getDateTime());
-		
-		checkInService.save(checkIn);
+		String dateTime = DateTimeUtil.getDateTime();
 		
 		Map<String, String> result = new HashMap<String, String>();
-		result.put("code", "0");
-		result.put("msg", "注册成功");
+		
+		String tempDateTime = dateTime.substring(0, dateTime.indexOf(" ")).replace("-", "");
+		if(checkIn.getCheckTime().equals(tempDateTime)){
+			checkIn.setCheckTime(dateTime);
+			checkInService.save(checkIn);
+			
+			result.put("code", "0");
+			result.put("msg", "签到成功");
+		} else {
+			result.put("code", "1");
+			result.put("msg", "签到日期错误");
+		}
 		
 		return new JacksonUtil().getJson(result);
 	}
