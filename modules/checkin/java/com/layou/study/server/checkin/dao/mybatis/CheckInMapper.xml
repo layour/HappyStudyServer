@@ -11,7 +11,7 @@
     <where/>
   </select>
   <!--分页查询-->
-  <select id="searchByPage" parameterType="map" resultMap="CheckInMap">SELECT <include refid="columns"/> FROM HS_CHECK
+  <select id="searchByPage" parameterType="map" resultMap="CheckInMap">SELECT <include refid="columns"/> FROM HS_CHECK ORDER BY CHECK_TIME DESC
     <where/>
   </select>
   <!--插入记录-->
