@@ -6,6 +6,8 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/modules/register/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/testcase/test-java/register/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/modules/checkin/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/modules/opinion/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/testcase/test-java/opinion/java"/>
 		<property name="context-root" value="HappyStudyServer"/>
 		<property name="java-output-path" value="target/classes"/>
 	</wb-module>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component Id="8a82f0aa4df4c8ed014df53d2d3101cf" Name="opinion">
+  <Version>1.0.0</Version>
+  <code>opinion</code>
+  <Mark>意见反馈</Mark>
+  <Description></Description>
+  <NavigatorEntrance></NavigatorEntrance>
+  <ComplexAttribute Name="packageAndFolder">
+    <Package/>
+    <Folder/>
+  </ComplexAttribute>
+  <ComplexAttribute Name="objectRelation"/>
+  <ComplexAttribute Name="requirement"/>
+  <ComplexAttribute Name="humanProcess"/>
+  <ComplexAttribute Name="interface"/>
+  <ComplexAttribute Name="coverRequire"/>
+  <ComplexAttribute Name="designData"/>
+</Component>

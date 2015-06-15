@@ -73,6 +73,27 @@ public class TeamClassController {
 	}
 	
 	/**
+	 * 查询所有
+	 * @param pageNumber
+	 * @param pageSize
+	 * @param sortType
+	 * @param model
+	 * @param request
+	 * @return
+	 */
+	@RequestMappingName(value = "查询列表")
+	@RequestMapping(value = "mobileList", method = RequestMethod.GET)
+	public @ResponseBody String mobileList(Model model, ServletRequest request) {
+		
+		List<TeamClass> teamClasss = teamClassService.findAll();
+		
+		model.addAttribute("total", teamClasss.size());
+		model.addAttribute("rows", teamClasss);
+		
+		return new JacksonUtil().getJson(model);
+	}
+	
+	/**
 	 * 跳转到增加页面
 	 * @return
 	 */

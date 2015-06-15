@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.layou.study.server.opinion.dao.mybatis.OpinionDao">
+  <!--查询一条记录-->
+  <select id="findById" resultMap="OpinionMap">SELECT <include refid="columns"/> FROM HS_OPINION WHERE OPINION_ID=#{opinionId}</select>
+  <!--查询所有记录-->
+  <select id="findAll" resultMap="OpinionMap">SELECT <include refid="columns"/> FROM HS_OPINION</select>
+  <!--按条件查询-->
+  <select id="search" parameterType="map" resultMap="OpinionMap">SELECT <include refid="columns"/> FROM HS_OPINION
+    <where>
+      <if test="userId != null and userId != ''">USER_ID LIKE CONCAT('%',#{userId},'%')</if>
+    </where>
+  </select>
+  <!--分页查询-->
+  <select id="searchByPage" parameterType="map" resultMap="OpinionMap">SELECT <include refid="columns"/> FROM HS_OPINION
+    <where>
+      <if test="userId != null and userId != ''">USER_ID LIKE CONCAT('%',#{userId},'%')</if>
+    </where>
+    ORDER BY OPINION_TIME DESC
+  </select>
+  <!--插入记录-->
+  <insert id="save" parameterType="Opinion">INSERT INTO HS_OPINION (<include refid="columns"/>) VALUES (#{opinionId},#{opinionDesc},#{contactInfo},#{opinionTime},#{userId})</insert>
+  <!--删除记录-->
+  <delete id="delete">DELETE FROM HS_OPINION WHERE OPINION_ID=#{opinionId}</delete>
+  <!--修改记录-->
+  <update id="update" parameterType="Opinion">UPDATE HS_OPINION
+    <set>
+      <if test="opinionDesc != null">OPINION_DESC = #{opinionDesc}, </if>
+      <if test="contactInfo != null">CONTACT_INFO = #{contactInfo}, </if>
+      <if test="opinionTime != null">OPINION_TIME = #{opinionTime}, </if>
+      <if test="userId != null">USER_ID = #{userId}, </if>
+    </set>WHERE OPINION_ID=#{opinionId}
+  </update>
+  <!--结果映射-->
+  <resultMap type="Opinion" id="OpinionMap">
+    <result column="OPINION_ID" property="opinionId"/>
+    <result column="OPINION_DESC" property="opinionDesc"/>
+    <result column="CONTACT_INFO" property="contactInfo"/>
+    <result column="OPINION_TIME" property="opinionTime"/>
+    <result column="USER_ID" property="userId"/>
+  </resultMap>
+  <!--查询字段-->
+  <sql id="columns">OPINION_ID,OPINION_DESC,CONTACT_INFO,OPINION_TIME,USER_ID</sql>
+</mapper>

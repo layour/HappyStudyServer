@@ -11,8 +11,11 @@
     <where/>
   </select>
   <!--分页查询-->
-  <select id="searchByPage" parameterType="map" resultMap="CheckInMap">SELECT <include refid="columns"/> FROM HS_CHECK ORDER BY CHECK_TIME DESC
-    <where/>
+  <select id="searchByPage" parameterType="map" resultMap="CheckInMap">SELECT <include refid="columns"/> FROM HS_CHECK
+    <where>
+      <if test="userId != null and userId != ''">USER_ID LIKE CONCAT('%',#{userId},'%')</if>
+    </where>
+    ORDER BY CHECK_TIME DESC
   </select>
   <!--插入记录-->
   <insert id="save" parameterType="CheckIn">INSERT INTO HS_CHECK (<include refid="columns"/>) VALUES (#{checkId},#{checkTime},#{checkAddr},#{checkType},#{userId})</insert>

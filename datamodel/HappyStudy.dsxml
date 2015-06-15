@@ -389,7 +389,7 @@
 </form>
 </viewModel>
 </entity>
-<entity author="" description="" displayName="意见反馈" entityType="persistent" genStrategy="uuid" id="8a82f0bd4db21e5c014db37a9835008b" isSetViewModel="false" name="Opinion" schema="" tableName="HS_OPINION">
+<entity author="" description="" displayName="意见反馈" entityType="persistent" genStrategy="uuid" id="8a82f0bd4db21e5c014db37a9835008b" isSetViewModel="true" name="Opinion" schema="" tableName="HS_OPINION">
 <location height="128" wide="220" x="31" y="95"/>
 <fields>
 <field FK="false" PK="true" columnName="OPINION_ID" columnType="" default="" description="" displayName="意见反馈ID" fieldName="opinionId" fieldType="java.lang.String" id="8a82f0bd4db21e5c014db37a93ab0087" length="" nullAble="true" persistent="true" precision="">
@@ -411,10 +411,74 @@
 <relations/>
 <refVentityFields/>
 <viewModel>
-<queryForm exportExcel="false" id="8a82f0a84db7422d014db7473744008e" isDistinct="false" isTotalRows="false" orderFields="" orders="" pageSize="15" title=""/>
-<queryResult id="8a82f0a84db7422d014db7473744008f" rowSelectType="checkbox" title=""/>
-<detailInfo id="8a82f0a84db7422d014db74737440091" showType="" title=""/>
-<form id="8a82f0a84db7422d014db74737440090" showType="" title=""/>
+<queryForm exportExcel="false" id="8a82f0a84db7422d014db7473744008e" isDistinct="false" isTotalRows="false" orderFields="opinionTime" orders="asc" pageSize="15" title="">
+<queryField columnSpan="0" displayName="用户ID" fieldId="8a82f0cc4de65479014de65a8e9c01e8" fieldName="userId" fieldType="java.lang.String" index="0" operator="=" rowSpan="0">
+<tag type="text">
+<attr attrValue="userId" defaultValue="" name="name" type="property"/>
+<attr attrValue="userId" defaultValue="" name="id" type="property"/>
+</tag>
+</queryField>
+</queryForm>
+<queryResult id="8a82f0a84db7422d014db7473744008f" rowSelectType="checkbox" title="意见反馈">
+<listField displayName="意见描述" fieldId="8a82f0bd4db21e5c014db37a93ab0088" fieldName="opinionDesc" fieldType="java.lang.String" index="0" width="">
+<tag type="text">
+<attr attrValue="opinionDesc" defaultValue="" name="name" type="property"/>
+<attr attrValue="opinionDesc" defaultValue="" name="id" type="property"/>
+</tag>
+</listField>
+<listField displayName="联系方式" fieldId="8a82f0bd4db21e5c014db37a93ab0089" fieldName="contactInfo" fieldType="java.lang.String" index="0" width="">
+<tag type="text">
+<attr attrValue="contactInfo" defaultValue="" name="name" type="property"/>
+<attr attrValue="contactInfo" defaultValue="" name="id" type="property"/>
+</tag>
+</listField>
+<listField displayName="反馈时间" fieldId="8a82f0bd4db21e5c014db37a93ab008a" fieldName="opinionTime" fieldType="java.lang.String" index="0" width="">
+<tag type="text">
+<attr attrValue="opinionTime" defaultValue="" name="name" type="property"/>
+<attr attrValue="opinionTime" defaultValue="" name="id" type="property"/>
+</tag>
+</listField>
+</queryResult>
+<detailInfo id="8a82f0a84db7422d014db74737440091" showType="" title="意见反馈">
+<showField displayName="意见描述" fieldId="8a82f0bd4db21e5c014db37a93ab0088" fieldName="opinionDesc" fieldType="java.lang.String" index="0">
+<tag type="text">
+<attr attrValue="opinionDesc" defaultValue="" name="name" type="property"/>
+<attr attrValue="opinionDesc" defaultValue="" name="id" type="property"/>
+</tag>
+</showField>
+<showField displayName="联系方式" fieldId="8a82f0bd4db21e5c014db37a93ab0089" fieldName="contactInfo" fieldType="java.lang.String" index="0">
+<tag type="text">
+<attr attrValue="contactInfo" defaultValue="" name="name" type="property"/>
+<attr attrValue="contactInfo" defaultValue="" name="id" type="property"/>
+</tag>
+</showField>
+<showField displayName="反馈时间" fieldId="8a82f0bd4db21e5c014db37a93ab008a" fieldName="opinionTime" fieldType="java.lang.String" index="0">
+<tag type="text">
+<attr attrValue="opinionTime" defaultValue="" name="name" type="property"/>
+<attr attrValue="opinionTime" defaultValue="" name="id" type="property"/>
+</tag>
+</showField>
+</detailInfo>
+<form id="8a82f0a84db7422d014db74737440090" showType="" title="意见反馈">
+<addField displayName="意见描述" fieldId="8a82f0bd4db21e5c014db37a93ab0088" fieldName="opinionDesc" fieldType="java.lang.String" index="0" isDisplay="true">
+<tag type="text">
+<attr attrValue="opinionDesc" defaultValue="" name="name" type="property"/>
+<attr attrValue="opinionDesc" defaultValue="" name="id" type="property"/>
+</tag>
+</addField>
+<addField displayName="联系方式" fieldId="8a82f0bd4db21e5c014db37a93ab0089" fieldName="contactInfo" fieldType="java.lang.String" index="0" isDisplay="true">
+<tag type="text">
+<attr attrValue="contactInfo" defaultValue="" name="name" type="property"/>
+<attr attrValue="contactInfo" defaultValue="" name="id" type="property"/>
+</tag>
+</addField>
+<addField displayName="反馈时间" fieldId="8a82f0bd4db21e5c014db37a93ab008a" fieldName="opinionTime" fieldType="java.lang.String" index="0" isDisplay="true">
+<tag type="text">
+<attr attrValue="opinionTime" defaultValue="" name="name" type="property"/>
+<attr attrValue="opinionTime" defaultValue="" name="id" type="property"/>
+</tag>
+</addField>
+</form>
 </viewModel>
 </entity>
 <entity author="" description="" displayName="试卷" entityType="persistent" genStrategy="uuid" id="8a82f0bd4db21e5c014db3820bc00097" isSetViewModel="false" name="Paper" schema="" tableName="HS_PAPER">

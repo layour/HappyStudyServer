@@ -2,6 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.layou.study.server.register.dao.mybatis.TeamClassDao">
+	<!--查询一条记录-->
+  <select id="findAll" resultMap="TeamClassMap">SELECT <include refid="columns"/> FROM HS_CLASS</select>
   <!--查询一条记录-->
   <select id="findById" resultMap="TeamClassMap">SELECT <include refid="columns"/> FROM HS_CLASS WHERE TEAM_CLASS_ID=#{teamClassId}</select>
   <!--分页查询-->
