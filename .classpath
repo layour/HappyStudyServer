@@ -74,5 +74,7 @@
 	<classpathentry kind="src" output="testcase/test-classes" path="testcase/test-java/checkin/java"/>
 	<classpathentry kind="src" output="WebApp/WEB-INF/classes" path="modules/opinion/java"/>
 	<classpathentry kind="src" output="testcase/test-classes" path="testcase/test-java/opinion/java"/>
+	<classpathentry kind="src" output="WebApp/WEB-INF/classes" path="modules/exam/java"/>
+	<classpathentry kind="src" output="testcase/test-classes" path="testcase/test-java/exam/java"/>
 	<classpathentry kind="output" path="WebApp/WEB-INF/classes"/>
 </classpath>

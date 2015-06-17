@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.layou.study.server.exam.dao.mybatis.ChapterDao">
+  <!--查询一条记录-->
+  <select id="findById" resultMap="ChapterMap">SELECT <include refid="columns"/> FROM HS_CHAPTER WHERE CHAPTER_ID=#{chapterId}</select>
+  <!--联合查询-->
+  <select id="findById" resultMap="Map">select hc.chapter_name, count(ht.chapter_id) as count from hs_chapter hc left join hs_topic ht on hc.chapter_id=ht.chapter_id group by hc.chapter_id</select>
+  <!--查询所有记录-->
+  <select id="findAll" resultMap="ChapterMap">SELECT <include refid="columns"/> FROM HS_CHAPTER</select>
+  <!--按条件查询-->
+  <select id="search" parameterType="map" resultMap="ChapterMap">SELECT <include refid="columns"/> FROM HS_CHAPTER
+    <where>
+      <if test="chapterName != null and chapterName != ''">CHAPTER_NAME LIKE CONCAT('%',#{chapterName},'%')</if>
+    </where>
+  </select>
+  <!--分页查询-->
+  <select id="searchByPage" parameterType="map" resultMap="ChapterMap">SELECT <include refid="columns"/> FROM HS_CHAPTER
+    <where>
+      <if test="chapterName != null and chapterName != ''">CHAPTER_NAME LIKE CONCAT('%',#{chapterName},'%')</if>
+    </where>
+  </select>
+  <!--插入记录-->
+  <insert id="save" parameterType="Chapter">INSERT INTO HS_CHAPTER (<include refid="columns"/>) VALUES (#{chapterId},#{chapterName})</insert>
+  <!--删除记录-->
+  <delete id="delete">DELETE FROM HS_CHAPTER WHERE CHAPTER_ID=#{chapterId}</delete>
+  <!--修改记录-->
+  <update id="update" parameterType="Chapter">UPDATE HS_CHAPTER
+    <set>
+      <if test="chapterName != null">CHAPTER_NAME = #{chapterName}, </if>
+    </set>WHERE CHAPTER_ID=#{chapterId}
+  </update>
+  <!--结果映射-->
+  <resultMap type="Chapter" id="ChapterMap">
+    <result column="CHAPTER_ID" property="chapterId"/>
+    <result column="CHAPTER_NAME" property="chapterName"/>
+  </resultMap>
+  <!--查询字段-->
+  <sql id="columns">CHAPTER_ID,CHAPTER_NAME</sql>
+</mapper>

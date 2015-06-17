@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.layou.study.server.exam.dao.mybatis.TopicDao">
+  <!--查询一条记录-->
+  <select id="findById" resultMap="TopicMap">SELECT <include refid="columns"/> FROM HS_TOPIC WHERE TOPIC_ID=#{topicId}</select>
+  <!--查询所有记录-->
+  <select id="findAll" resultMap="TopicMap">SELECT <include refid="columns"/> FROM HS_TOPIC</select>
+  <!--按条件查询-->
+  <select id="search" parameterType="map" resultMap="TopicMap">SELECT <include refid="columns"/> FROM HS_TOPIC
+    <where>
+      <if test="chapter != null and chapter != ''">CHAPTER LIKE CONCAT('%',#{chapter},'%')</if>
+    </where>
+  </select>
+  <!--分页查询-->
+  <select id="searchByPage" parameterType="map" resultMap="TopicMap">SELECT <include refid="columns"/> FROM HS_TOPIC
+    <where>
+      <if test="chapter != null and chapter != ''">CHAPTER LIKE CONCAT('%',#{chapter},'%')</if>
+    </where>
+  </select>
+  <!--插入记录-->
+  <insert id="save" parameterType="Topic">INSERT INTO HS_TOPIC (<include refid="columns"/>) VALUES (#{topicId},#{topic},#{answer},#{rightAnswer},#{topicScore},#{analysis},#{difficulty},#{chapter})</insert>
+  <!--删除记录-->
+  <delete id="delete">DELETE FROM HS_TOPIC WHERE TOPIC_ID=#{topicId}</delete>
+  <!--修改记录-->
+  <update id="update" parameterType="Topic">UPDATE HS_TOPIC
+    <set>
+      <if test="topic != null">TOPIC = #{topic}, </if>
+      <if test="answer != null">ANSWER = #{answer}, </if>
+      <if test="rightAnswer != null">RIGHT_ANSWER = #{rightAnswer}, </if>
+      <if test="topicScore != null">TOPIC_SCORE = #{topicScore}, </if>
+      <if test="analysis != null">ANALYSIS = #{analysis}, </if>
+      <if test="difficulty != null">DIFFICULTY = #{difficulty}, </if>
+      <if test="chapter != null">CHAPTER = #{chapter}, </if>
+    </set>WHERE TOPIC_ID=#{topicId}
+  </update>
+  <!--结果映射-->
+  <resultMap type="Topic" id="TopicMap">
+    <result column="TOPIC_ID" property="topicId"/>
+    <result column="TOPIC" property="topic"/>
+    <result column="ANSWER" property="answer"/>
+    <result column="RIGHT_ANSWER" property="rightAnswer"/>
+    <result column="TOPIC_SCORE" property="topicScore"/>
+    <result column="ANALYSIS" property="analysis"/>
+    <result column="DIFFICULTY" property="difficulty"/>
+    <result column="CHAPTER" property="chapter"/>
+  </resultMap>
+  <!--查询字段-->
+  <sql id="columns">TOPIC_ID,TOPIC,ANSWER,RIGHT_ANSWER,TOPIC_SCORE,ANALYSIS,DIFFICULTY,CHAPTER</sql>
+</mapper>

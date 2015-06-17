@@ -540,7 +540,7 @@
 <form id="8a82f0a84db7422d014db74737440098" showType="" title=""/>
 </viewModel>
 </entity>
-<entity author="" description="" displayName="题目" entityType="persistent" genStrategy="uuid" id="8a82f0bd4db21e5c014db3bca98100b5" isSetViewModel="false" name="Topic" schema="" tableName="HS_TOPIC">
+<entity author="" description="" displayName="题目" entityType="persistent" genStrategy="uuid" id="8a82f0bd4db21e5c014db3bca98100b5" isSetViewModel="true" name="Topic" schema="" tableName="HS_TOPIC">
 <location height="188" wide="220" x="272" y="288"/>
 <fields>
 <field FK="false" PK="true" columnName="TOPIC_ID" columnType="" default="" description="" displayName="题目ID" fieldName="topicId" fieldType="java.lang.String" id="402881ea4db9088d014db9c2f66300c5" length="" nullAble="true" persistent="true" precision="">
@@ -564,21 +564,157 @@
 <field FK="false" PK="false" columnName="DIFFICULTY" columnType="" default="" description="" displayName="难易度" fieldName="difficulty" fieldType="java.lang.String" id="8a82f0bd4db21e5c014db3bca3b400b1" length="" nullAble="false" persistent="true" precision="">
 <refVentityFields/>
 </field>
-<field FK="false" PK="false" columnName="CHAPTER" columnType="" default="" description="" displayName="所属章节" fieldName="chapter" fieldType="java.lang.String" id="8a82f0a14df6fd8e014df736e4480236" length="" nullAble="false" persistent="true" precision="">
+<field FK="false" PK="false" columnName="CHAPTER_ID" columnType="" default="" description="" displayName="章节ID" fieldName="chapterId" fieldType="java.lang.String" id="8a82f0a14df6fd8e014df736e4480236" length="" nullAble="false" persistent="true" precision="">
 <refVentityFields/>
 </field>
 </fields>
 <relations/>
 <refVentityFields/>
 <viewModel>
-<queryForm exportExcel="false" id="8a82f0a84db7422d014db7473744009a" isDistinct="false" isTotalRows="false" orderFields="" orders="" pageSize="15" title=""/>
-<queryResult id="8a82f0a84db7422d014db7473744009b" rowSelectType="checkbox" title=""/>
-<detailInfo id="8a82f0a84db7422d014db7473744009d" showType="" title=""/>
-<form id="8a82f0a84db7422d014db7473744009c" showType="" title=""/>
+<queryForm exportExcel="false" id="8a82f0a84db7422d014db7473744009a" isDistinct="false" isTotalRows="false" orderFields="" orders="" pageSize="15" title="">
+<queryField columnSpan="0" displayName="所属章节" fieldId="8a82f0a14df6fd8e014df736e4480236" fieldName="chapterId" fieldType="java.lang.String" index="0" operator="=" rowSpan="0">
+<tag type="text">
+<attr attrValue="chapterId" defaultValue="" name="name" type="property"/>
+<attr attrValue="chapterId" defaultValue="" name="id" type="property"/>
+</tag>
+</queryField>
+</queryForm>
+<queryResult id="8a82f0a84db7422d014db7473744009b" rowSelectType="checkbox" title="题目查询">
+<listField displayName="题目描述" fieldId="8a82f0bd4db21e5c014db3bca3b400ad" fieldName="topic" fieldType="java.lang.String" index="0" width="">
+<tag type="text">
+<attr attrValue="topic" defaultValue="" name="name" type="property"/>
+<attr attrValue="topic" defaultValue="" name="id" type="property"/>
+</tag>
+</listField>
+<listField displayName="答案描述" fieldId="8a82f0bd4db21e5c014db3bca3b400ae" fieldName="answer" fieldType="java.lang.String" index="0" width="">
+<tag type="text">
+<attr attrValue="answer" defaultValue="" name="name" type="property"/>
+<attr attrValue="answer" defaultValue="" name="id" type="property"/>
+</tag>
+</listField>
+<listField displayName="正确答案" fieldId="8a82f0bd4db21e5c014db3bca3b400af" fieldName="rightAnswer" fieldType="java.lang.String" index="0" width="">
+<tag type="text">
+<attr attrValue="rightAnswer" defaultValue="" name="name" type="property"/>
+<attr attrValue="rightAnswer" defaultValue="" name="id" type="property"/>
+</tag>
+</listField>
+<listField displayName="题目分值" fieldId="8a82f0a84db815e4014db817de780078" fieldName="topicScore" fieldType="java.lang.String" index="0" width="">
+<tag type="text">
+<attr attrValue="topicScore" defaultValue="" name="name" type="property"/>
+<attr attrValue="topicScore" defaultValue="" name="id" type="property"/>
+</tag>
+</listField>
+<listField displayName="详解" fieldId="8a82f0bd4db21e5c014db3bca3b400b0" fieldName="analysis" fieldType="java.lang.String" index="0" width="">
+<tag type="text">
+<attr attrValue="analysis" defaultValue="" name="name" type="property"/>
+<attr attrValue="analysis" defaultValue="" name="id" type="property"/>
+</tag>
+</listField>
+<listField displayName="难易度" fieldId="8a82f0bd4db21e5c014db3bca3b400b1" fieldName="difficulty" fieldType="java.lang.String" index="0" width="">
+<tag type="text">
+<attr attrValue="difficulty" defaultValue="" name="name" type="property"/>
+<attr attrValue="difficulty" defaultValue="" name="id" type="property"/>
+</tag>
+</listField>
+<listField displayName="所属章节" fieldId="8a82f0a14df6fd8e014df736e4480236" fieldName="chapterId" fieldType="java.lang.String" index="0" width="">
+<tag type="text">
+<attr attrValue="chapterId" defaultValue="" name="name" type="property"/>
+<attr attrValue="chapterId" defaultValue="" name="id" type="property"/>
+</tag>
+</listField>
+</queryResult>
+<detailInfo id="8a82f0a84db7422d014db7473744009d" showType="" title="题目详细">
+<showField displayName="题目描述" fieldId="8a82f0bd4db21e5c014db3bca3b400ad" fieldName="topic" fieldType="java.lang.String" index="0">
+<tag type="text">
+<attr attrValue="topic" defaultValue="" name="name" type="property"/>
+<attr attrValue="topic" defaultValue="" name="id" type="property"/>
+</tag>
+</showField>
+<showField displayName="答案描述" fieldId="8a82f0bd4db21e5c014db3bca3b400ae" fieldName="answer" fieldType="java.lang.String" index="0">
+<tag type="text">
+<attr attrValue="answer" defaultValue="" name="name" type="property"/>
+<attr attrValue="answer" defaultValue="" name="id" type="property"/>
+</tag>
+</showField>
+<showField displayName="正确答案" fieldId="8a82f0bd4db21e5c014db3bca3b400af" fieldName="rightAnswer" fieldType="java.lang.String" index="0">
+<tag type="text">
+<attr attrValue="rightAnswer" defaultValue="" name="name" type="property"/>
+<attr attrValue="rightAnswer" defaultValue="" name="id" type="property"/>
+</tag>
+</showField>
+<showField displayName="题目分值" fieldId="8a82f0a84db815e4014db817de780078" fieldName="topicScore" fieldType="java.lang.String" index="0">
+<tag type="text">
+<attr attrValue="topicScore" defaultValue="" name="name" type="property"/>
+<attr attrValue="topicScore" defaultValue="" name="id" type="property"/>
+</tag>
+</showField>
+<showField displayName="详解" fieldId="8a82f0bd4db21e5c014db3bca3b400b0" fieldName="analysis" fieldType="java.lang.String" index="0">
+<tag type="text">
+<attr attrValue="analysis" defaultValue="" name="name" type="property"/>
+<attr attrValue="analysis" defaultValue="" name="id" type="property"/>
+</tag>
+</showField>
+<showField displayName="难易度" fieldId="8a82f0bd4db21e5c014db3bca3b400b1" fieldName="difficulty" fieldType="java.lang.String" index="0">
+<tag type="text">
+<attr attrValue="difficulty" defaultValue="" name="name" type="property"/>
+<attr attrValue="difficulty" defaultValue="" name="id" type="property"/>
+</tag>
+</showField>
+<showField displayName="所属章节" fieldId="8a82f0a14df6fd8e014df736e4480236" fieldName="chapterId" fieldType="java.lang.String" index="0">
+<tag type="text">
+<attr attrValue="chapterId" defaultValue="" name="name" type="property"/>
+<attr attrValue="chapterId" defaultValue="" name="id" type="property"/>
+</tag>
+</showField>
+</detailInfo>
+<form id="8a82f0a84db7422d014db7473744009c" showType="" title="添加题目">
+<addField displayName="题目描述" fieldId="8a82f0bd4db21e5c014db3bca3b400ad" fieldName="topic" fieldType="java.lang.String" index="0" isDisplay="true">
+<tag type="text">
+<attr attrValue="topic" defaultValue="" name="name" type="property"/>
+<attr attrValue="topic" defaultValue="" name="id" type="property"/>
+</tag>
+</addField>
+<addField displayName="答案描述" fieldId="8a82f0bd4db21e5c014db3bca3b400ae" fieldName="answer" fieldType="java.lang.String" index="0" isDisplay="true">
+<tag type="text">
+<attr attrValue="answer" defaultValue="" name="name" type="property"/>
+<attr attrValue="answer" defaultValue="" name="id" type="property"/>
+</tag>
+</addField>
+<addField displayName="正确答案" fieldId="8a82f0bd4db21e5c014db3bca3b400af" fieldName="rightAnswer" fieldType="java.lang.String" index="0" isDisplay="true">
+<tag type="text">
+<attr attrValue="rightAnswer" defaultValue="" name="name" type="property"/>
+<attr attrValue="rightAnswer" defaultValue="" name="id" type="property"/>
+</tag>
+</addField>
+<addField displayName="题目分值" fieldId="8a82f0a84db815e4014db817de780078" fieldName="topicScore" fieldType="java.lang.String" index="0" isDisplay="true">
+<tag type="text">
+<attr attrValue="topicScore" defaultValue="" name="name" type="property"/>
+<attr attrValue="topicScore" defaultValue="" name="id" type="property"/>
+</tag>
+</addField>
+<addField displayName="详解" fieldId="8a82f0bd4db21e5c014db3bca3b400b0" fieldName="analysis" fieldType="java.lang.String" index="0" isDisplay="true">
+<tag type="text">
+<attr attrValue="analysis" defaultValue="" name="name" type="property"/>
+<attr attrValue="analysis" defaultValue="" name="id" type="property"/>
+</tag>
+</addField>
+<addField displayName="难易度" fieldId="8a82f0bd4db21e5c014db3bca3b400b1" fieldName="difficulty" fieldType="java.lang.String" index="0" isDisplay="true">
+<tag type="text">
+<attr attrValue="difficulty" defaultValue="" name="name" type="property"/>
+<attr attrValue="difficulty" defaultValue="" name="id" type="property"/>
+</tag>
+</addField>
+<addField displayName="所属章节" fieldId="8a82f0a14df6fd8e014df736e4480236" fieldName="chapterId" fieldType="java.lang.String" index="0" isDisplay="true">
+<tag type="text">
+<attr attrValue="chapterId" defaultValue="" name="name" type="property"/>
+<attr attrValue="chapterId" defaultValue="" name="id" type="property"/>
+</tag>
+</addField>
+</form>
 </viewModel>
 </entity>
 <entity author="" description="" displayName="做题记录" entityType="persistent" genStrategy="uuid" id="402881ea4db9088d014db99406790095" isSetViewModel="false" name="TopicRecord" schema="" tableName="HS_TOPIC_RECORD">
-<location height="149" wide="232" x="523" y="222"/>
+<location height="168" wide="232" x="521" y="196"/>
 <fields>
 <field FK="false" PK="true" columnName="TOPIC_RECORD_ID" columnType="" default="" description="" displayName="做题记录ID" fieldName="topicRecordId" fieldType="java.lang.String" id="402881ea4db9088d014db991d516008e" length="" nullAble="true" persistent="true" precision="">
 <refVentityFields/>
@@ -598,6 +734,9 @@
 <field FK="false" PK="false" columnName="EXAM_RECORD_ID" columnType="" default="" description="" displayName="考试记录ID" fieldName="examRecordId" fieldType="java.lang.String" id="402881ea4db9088d014db9b0483300b5" length="" nullAble="false" persistent="true" precision="">
 <refVentityFields/>
 </field>
+<field FK="false" PK="false" columnName="USER_ID" columnType="" default="" description="" displayName="用户ID" fieldName="userId" fieldType="java.lang.String" id="8a82f0cc4dff7f14014e00aa5c24037a" length="" nullAble="false" persistent="true" precision="">
+<refVentityFields/>
+</field>
 </fields>
 <relations/>
 <refVentityFields/>
@@ -608,7 +747,7 @@
 <form id="402881ea4db9088d014db9d0059d013c" showType="" title=""/>
 </viewModel>
 </entity>
-<entity author="" description="" displayName="用户题目" entityType="persistent" genStrategy="uuid" id="402881ea4db9088d014db9aafff000b1" isSetViewModel="false" name="UserTopic" schema="" tableName="HS_USER_TOPIC">
+<entity author="" description="" displayName="收藏" entityType="persistent" genStrategy="uuid" id="402881ea4db9088d014db9aafff000b1" isSetViewModel="false" name="UserTopic" schema="" tableName="HS_USER_TOPIC">
 <location height="112" wide="230" x="33" y="236"/>
 <fields>
 <field FK="false" PK="true" columnName="USER_TOPIC_ID" columnType="" default="" description="" displayName="用户题目ID" fieldName="userTopicId" fieldType="java.lang.String" id="402881ea4db9088d014db9bd523800bb" length="" nullAble="true" persistent="true" precision="">
@@ -633,8 +772,8 @@
 <form id="402881ea4db9088d014db9d0059d014c" showType="" title=""/>
 </viewModel>
 </entity>
-<entity author="" description="" displayName="试卷题目" entityType="persistent" genStrategy="uuid" id="8a82f0a64dbc153a014dbc1b402400ea" isSetViewModel="false" name="PaperTopic" schema="" tableName="HS_PAPER_TOPIC">
-<location height="91" wide="232" x="30" y="425"/>
+<entity author="" description="" displayName="题目试卷" entityType="persistent" genStrategy="uuid" id="8a82f0a64dbc153a014dbc1b402400ea" isSetViewModel="false" name="PaperTopic" schema="" tableName="HS_PAPER_TOPIC">
+<location height="91" wide="232" x="32" y="360"/>
 <fields>
 <field FK="false" PK="true" columnName="PAPER_TOPIC_ID" columnType="" default="" description="" displayName="试卷题目ID" fieldName="paperTopicId" fieldType="java.lang.String" id="8a82f0a64dbc153a014dbc2519c100f4" length="" nullAble="true" persistent="true" precision="">
 <refVentityFields/>
@@ -653,6 +792,53 @@
 <queryResult id="8a82f0a64dbc153a014dbe6b1c1b064b" rowSelectType="checkbox" title=""/>
 <detailInfo id="8a82f0a64dbc153a014dbe6b1c1b064d" showType="" title=""/>
 <form id="8a82f0a64dbc153a014dbe6b1c1b064c" showType="" title=""/>
+</viewModel>
+</entity>
+<entity author="" description="" displayName="章节" entityType="persistent" genStrategy="uuid" id="8a82f0cc4dff7f14014e00f45c44072c" isSetViewModel="true" name="Chapter" schema="" tableName="HS_CHAPTER">
+<location height="68" wide="220" x="31" y="463"/>
+<fields>
+<field FK="false" PK="true" columnName="CHAPTER_ID" columnType="" default="" description="" displayName="章节ID" fieldName="chapterId" fieldType="java.lang.String" id="8a82f0cc4dff7f14014e00f453c4072a" length="" nullAble="true" persistent="true" precision="">
+<refVentityFields/>
+</field>
+<field FK="false" PK="false" columnName="CHAPTER_NAME" columnType="" default="" description="" displayName="章节名称" fieldName="chapterName" fieldType="java.lang.String" id="8a82f0cc4dff7f14014e00f453c4072b" length="" nullAble="false" persistent="true" precision="">
+<refVentityFields/>
+</field>
+</fields>
+<relations/>
+<refVentityFields/>
+<viewModel>
+<queryForm exportExcel="false" id="8a82f0cc4dff7f14014e00f537c00751" isDistinct="false" isTotalRows="true" orderFields="" orders="" pageSize="15" title="">
+<queryField columnSpan="0" displayName="章节名称" fieldId="8a82f0cc4dff7f14014e00f453c4072b" fieldName="chapterName" fieldType="java.lang.String" index="0" operator="=" rowSpan="0">
+<tag type="text">
+<attr attrValue="chapterName" defaultValue="" name="name" type="property"/>
+<attr attrValue="chapterName" defaultValue="" name="id" type="property"/>
+</tag>
+</queryField>
+</queryForm>
+<queryResult id="8a82f0cc4dff7f14014e00f537c00752" rowSelectType="checkbox" title="查询章节">
+<listField displayName="章节名称" fieldId="8a82f0cc4dff7f14014e00f453c4072b" fieldName="chapterName" fieldType="java.lang.String" index="0" width="">
+<tag type="text">
+<attr attrValue="chapterName" defaultValue="" name="name" type="property"/>
+<attr attrValue="chapterName" defaultValue="" name="id" type="property"/>
+</tag>
+</listField>
+</queryResult>
+<detailInfo id="8a82f0cc4dff7f14014e00f537c10754" showType="" title="章节详细">
+<showField displayName="章节名称" fieldId="8a82f0cc4dff7f14014e00f453c4072b" fieldName="chapterName" fieldType="java.lang.String" index="0">
+<tag type="text">
+<attr attrValue="chapterName" defaultValue="" name="name" type="property"/>
+<attr attrValue="chapterName" defaultValue="" name="id" type="property"/>
+</tag>
+</showField>
+</detailInfo>
+<form id="8a82f0cc4dff7f14014e00f537c10753" title="添加章节">
+<addField displayName="章节名称" fieldId="8a82f0cc4dff7f14014e00f453c4072b" fieldName="chapterName" fieldType="java.lang.String" index="0" isDisplay="true">
+<tag type="text">
+<attr attrValue="chapterName" defaultValue="" name="name" type="property"/>
+<attr attrValue="chapterName" defaultValue="" name="id" type="property"/>
+</tag>
+</addField>
+</form>
 </viewModel>
 </entity>
 </dataset>
