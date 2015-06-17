@@ -38,7 +38,7 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMappingName(value = "打开管理页面")
-	@RequestMapping(value = "toManagerPage", method = RequestMethod.GET)
+	@RequestMapping(value = "toManagerPage",  method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
 	public String toManagerPage() {
 		return "register/user/userList";
 	}
@@ -53,7 +53,7 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMappingName(value = "查询列表")
-	@RequestMapping(value = "list", method = RequestMethod.GET)
+	@RequestMapping(value = "list",  method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
 	public @ResponseBody String list(@RequestParam(value = "page", defaultValue = "1") int pageNumber,
 			@RequestParam(value = "page.size", defaultValue = PageParameter.DEFAULT_PAGE_SIZE+"") int pageSize, 
 			Model model, ServletRequest request) {
@@ -83,7 +83,7 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMappingName(value = "登录")
-	@RequestMapping(value="login", method = { RequestMethod.GET,RequestMethod.POST },produces = "application/json; charset=utf-8")
+	@RequestMapping(value="login", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
 	@ResponseBody
 	public String login(Model model, ServletRequest request) {
 		
@@ -113,7 +113,7 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMappingName(value = "打开增加页面")
-	@RequestMapping(value = "toAddPage", method = RequestMethod.GET)
+	@RequestMapping(value = "toAddPage",  method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
 	public String toAddPage() {
 		return "register/user/userAdd";
 	}
@@ -125,7 +125,7 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMappingName(value = "保存")
-	@RequestMapping(value = "save", method = RequestMethod.POST)
+	@RequestMapping(value = "save",  method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
 	public String save(@Valid User user, RedirectAttributes redirectAttributes) {
 		userService.save(user);
 		return "register/user/userList";
@@ -138,7 +138,7 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMappingName(value = "移动保存")
-	@RequestMapping(value="mobileSave", method = { RequestMethod.GET,RequestMethod.POST },produces = "application/json; charset=utf-8")  
+	@RequestMapping(value="mobileSave", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")  
 	@ResponseBody
 	public String mobileSave(@Valid User user, Model model) {
 		userService.save(user);
@@ -158,7 +158,7 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMappingName(value = "打开修改页面")
-	@RequestMapping(value = "toUpdatePage/{userId}", method = RequestMethod.GET)
+	@RequestMapping(value = "toUpdatePage/{userId}",  method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
 	public String toUpdatePage(@PathVariable("userId") String userId, Model model) {
 		model.addAttribute("user", userService.findById(userId));
 		return "register/user/userUpdate";
@@ -171,7 +171,7 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMappingName(value = "修改")
-	@RequestMapping(value = "update", method = RequestMethod.POST)
+	@RequestMapping(value = "update",  method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
 	public String update(@Valid @ModelAttribute("user") User user, RedirectAttributes redirectAttributes) {
 		userService.update(user);
 		redirectAttributes.addFlashAttribute("message", "更新成功");
@@ -185,7 +185,7 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMappingName(value = "打开详细页面")
-	@RequestMapping(value = "toDetailPage/{userId}", method = RequestMethod.GET)
+	@RequestMapping(value = "toDetailPage/{userId}",  method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
 	public String toDetailPage(@PathVariable("userId") String userId, Model model) {
 		model.addAttribute("user", userService.findById(userId));
 		return "register/user/userDetail";

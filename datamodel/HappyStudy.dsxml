@@ -440,19 +440,19 @@
 </listField>
 </queryResult>
 <detailInfo id="8a82f0a84db7422d014db74737440091" showType="" title="意见反馈">
-<showField displayName="意见描述" fieldId="8a82f0bd4db21e5c014db37a93ab0088" fieldName="opinionDesc" fieldType="java.lang.String" index="0">
+<showField displayName="意见描述" fieldId="8a82f0bd4db21e5c014db37a93ab0088" fieldName="opinionDesc" fieldType="java.lang.String" index="0" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="opinionDesc" defaultValue="" name="name" type="property"/>
 <attr attrValue="opinionDesc" defaultValue="" name="id" type="property"/>
 </tag>
 </showField>
-<showField displayName="联系方式" fieldId="8a82f0bd4db21e5c014db37a93ab0089" fieldName="contactInfo" fieldType="java.lang.String" index="0">
+<showField displayName="联系方式" fieldId="8a82f0bd4db21e5c014db37a93ab0089" fieldName="contactInfo" fieldType="java.lang.String" index="0" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="contactInfo" defaultValue="" name="name" type="property"/>
 <attr attrValue="contactInfo" defaultValue="" name="id" type="property"/>
 </tag>
 </showField>
-<showField displayName="反馈时间" fieldId="8a82f0bd4db21e5c014db37a93ab008a" fieldName="opinionTime" fieldType="java.lang.String" index="0">
+<showField displayName="反馈时间" fieldId="8a82f0bd4db21e5c014db37a93ab008a" fieldName="opinionTime" fieldType="java.lang.String" index="0" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="opinionTime" defaultValue="" name="name" type="property"/>
 <attr attrValue="opinionTime" defaultValue="" name="id" type="property"/>
@@ -460,19 +460,19 @@
 </showField>
 </detailInfo>
 <form id="8a82f0a84db7422d014db74737440090" showType="" title="意见反馈">
-<addField displayName="意见描述" fieldId="8a82f0bd4db21e5c014db37a93ab0088" fieldName="opinionDesc" fieldType="java.lang.String" index="0" isDisplay="true">
+<addField displayName="意见描述" fieldId="8a82f0bd4db21e5c014db37a93ab0088" fieldName="opinionDesc" fieldType="java.lang.String" index="0" isDisplay="true" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="opinionDesc" defaultValue="" name="name" type="property"/>
 <attr attrValue="opinionDesc" defaultValue="" name="id" type="property"/>
 </tag>
 </addField>
-<addField displayName="联系方式" fieldId="8a82f0bd4db21e5c014db37a93ab0089" fieldName="contactInfo" fieldType="java.lang.String" index="0" isDisplay="true">
+<addField displayName="联系方式" fieldId="8a82f0bd4db21e5c014db37a93ab0089" fieldName="contactInfo" fieldType="java.lang.String" index="0" isDisplay="true" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="contactInfo" defaultValue="" name="name" type="property"/>
 <attr attrValue="contactInfo" defaultValue="" name="id" type="property"/>
 </tag>
 </addField>
-<addField displayName="反馈时间" fieldId="8a82f0bd4db21e5c014db37a93ab008a" fieldName="opinionTime" fieldType="java.lang.String" index="0" isDisplay="true">
+<addField displayName="反馈时间" fieldId="8a82f0bd4db21e5c014db37a93ab008a" fieldName="opinionTime" fieldType="java.lang.String" index="0" isDisplay="true" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="opinionTime" defaultValue="" name="name" type="property"/>
 <attr attrValue="opinionTime" defaultValue="" name="id" type="property"/>
@@ -482,7 +482,7 @@
 </viewModel>
 </entity>
 <entity author="" description="" displayName="试卷" entityType="persistent" genStrategy="uuid" id="8a82f0bd4db21e5c014db3820bc00097" isSetViewModel="false" name="Paper" schema="" tableName="HS_PAPER">
-<location height="128" wide="220" x="272" y="468"/>
+<location height="128" wide="220" x="272" y="490"/>
 <fields>
 <field FK="false" PK="true" columnName="PAPER_ID" columnType="" default="" description="" displayName="试卷ID" fieldName="paperId" fieldType="java.lang.String" id="402881ea4db9088d014db9c156bc00c3" length="" nullAble="true" persistent="true" precision="">
 <refVentityFields/>
@@ -541,7 +541,7 @@
 </viewModel>
 </entity>
 <entity author="" description="" displayName="题目" entityType="persistent" genStrategy="uuid" id="8a82f0bd4db21e5c014db3bca98100b5" isSetViewModel="false" name="Topic" schema="" tableName="HS_TOPIC">
-<location height="169" wide="220" x="272" y="288"/>
+<location height="188" wide="220" x="272" y="288"/>
 <fields>
 <field FK="false" PK="true" columnName="TOPIC_ID" columnType="" default="" description="" displayName="题目ID" fieldName="topicId" fieldType="java.lang.String" id="402881ea4db9088d014db9c2f66300c5" length="" nullAble="true" persistent="true" precision="">
 <refVentityFields/>
@@ -562,6 +562,9 @@
 <refVentityFields/>
 </field>
 <field FK="false" PK="false" columnName="DIFFICULTY" columnType="" default="" description="" displayName="难易度" fieldName="difficulty" fieldType="java.lang.String" id="8a82f0bd4db21e5c014db3bca3b400b1" length="" nullAble="false" persistent="true" precision="">
+<refVentityFields/>
+</field>
+<field FK="false" PK="false" columnName="CHAPTER" columnType="" default="" description="" displayName="所属章节" fieldName="chapter" fieldType="java.lang.String" id="8a82f0a14df6fd8e014df736e4480236" length="" nullAble="false" persistent="true" precision="">
 <refVentityFields/>
 </field>
 </fields>
