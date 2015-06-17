@@ -37,7 +37,7 @@ public class ChapterController {
 	 * @return
 	 */
 	@RequestMappingName(value = "打开管理页面")
-	@RequestMapping(value = "toManagerPage", method = RequestMethod.GET)
+	@RequestMapping(value = "toManagerPage", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
 	public String toManagerPage() {
 		return "exam/chapter/chapterList";
 	}
@@ -52,7 +52,7 @@ public class ChapterController {
 	 * @return
 	 */
 	@RequestMappingName(value = "查询列表")
-	@RequestMapping(value = "list", method = RequestMethod.GET)
+	@RequestMapping(value = "list", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
 	public @ResponseBody String list(@RequestParam(value = "page", defaultValue = "1") int pageNumber,
 			@RequestParam(value = "page.size", defaultValue = PageParameter.DEFAULT_PAGE_SIZE+"") int pageSize, 
 			Model model, ServletRequest request) {
@@ -73,11 +73,31 @@ public class ChapterController {
 	}
 	
 	/**
+	 * 联合查询
+	 * @param pageNumber
+	 * @param pageSize
+	 * @param sortType
+	 * @param model
+	 * @param request
+	 * @return
+	 */
+	@RequestMappingName(value = "查询列表")
+	@RequestMapping(value = "mobileList", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
+	public @ResponseBody String mobileList(Model model, ServletRequest request) {
+		List<Chapter> chapters = chapterService.findAll();
+		
+		model.addAttribute("total", chapters.size());
+		model.addAttribute("rows", chapters);
+		
+		return new JacksonUtil().getJson(model);
+	}
+	
+	/**
 	 * 跳转到增加页面
 	 * @return
 	 */
 	@RequestMappingName(value = "打开增加页面")
-	@RequestMapping(value = "toAddPage", method = RequestMethod.GET)
+	@RequestMapping(value = "toAddPage", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
 	public String toAddPage() {
 		return "exam/chapter/chapterAdd";
 	}
@@ -89,7 +109,7 @@ public class ChapterController {
 	 * @return
 	 */
 	@RequestMappingName(value = "保存")
-	@RequestMapping(value = "save", method = RequestMethod.POST)
+	@RequestMapping(value = "save", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
 	public String save(@Valid Chapter chapter, RedirectAttributes redirectAttributes) {
 		chapterService.save(chapter);
 		return "exam/chapter/chapterList";
@@ -102,7 +122,7 @@ public class ChapterController {
 	 * @return
 	 */
 	@RequestMappingName(value = "打开修改页面")
-	@RequestMapping(value = "toUpdatePage/{chapterId}", method = RequestMethod.GET)
+	@RequestMapping(value = "toUpdatePage/{chapterId}", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
 	public String toUpdatePage(@PathVariable("chapterId") String chapterId, Model model) {
 		model.addAttribute("chapter", chapterService.findById(chapterId));
 		return "exam/chapter/chapterUpdate";
@@ -115,7 +135,7 @@ public class ChapterController {
 	 * @return
 	 */
 	@RequestMappingName(value = "修改")
-	@RequestMapping(value = "update", method = RequestMethod.POST)
+	@RequestMapping(value = "update", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
 	public String update(@Valid @ModelAttribute("chapter") Chapter chapter, RedirectAttributes redirectAttributes) {
 		chapterService.update(chapter);
 		redirectAttributes.addFlashAttribute("message", "更新成功");
@@ -129,7 +149,7 @@ public class ChapterController {
 	 * @return
 	 */
 	@RequestMappingName(value = "打开详细页面")
-	@RequestMapping(value = "toDetailPage/{chapterId}", method = RequestMethod.GET)
+	@RequestMapping(value = "toDetailPage/{chapterId}", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
 	public String toDetailPage(@PathVariable("chapterId") String chapterId, Model model) {
 		model.addAttribute("chapter", chapterService.findById(chapterId));
 		return "exam/chapter/chapterDetail";

@@ -4,10 +4,8 @@
 <mapper namespace="com.layou.study.server.exam.dao.mybatis.ChapterDao">
   <!--查询一条记录-->
   <select id="findById" resultMap="ChapterMap">SELECT <include refid="columns"/> FROM HS_CHAPTER WHERE CHAPTER_ID=#{chapterId}</select>
-  <!--联合查询-->
-  <select id="findById" resultMap="Map">select hc.chapter_name, count(ht.chapter_id) as count from hs_chapter hc left join hs_topic ht on hc.chapter_id=ht.chapter_id group by hc.chapter_id</select>
   <!--查询所有记录-->
-  <select id="findAll" resultMap="ChapterMap">SELECT <include refid="columns"/> FROM HS_CHAPTER</select>
+  <select id="findAll" resultType="map">SELECT HC.CHAPTER_NAME AS chapterName, COUNT(HT.CHAPTER_ID) AS count FROM HS_CHAPTER HC LEFT JOIN HS_TOPIC HT ON HC.CHAPTER_ID=HT.CHAPTER_ID GROUP BY HC.CHAPTER_ID</select>
   <!--按条件查询-->
   <select id="search" parameterType="map" resultMap="ChapterMap">SELECT <include refid="columns"/> FROM HS_CHAPTER
     <where>
