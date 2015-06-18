@@ -19,7 +19,7 @@ public class Topic extends DomainBase implements Serializable{
 	private String topicScore;
 	private String analysis;
 	private String difficulty;
-	private String chapter;
+	private String chapterId;
 
 	public Topic() {
 		super();
@@ -81,12 +81,12 @@ public class Topic extends DomainBase implements Serializable{
 		this.difficulty = difficulty;
 	}
 
-	public String getChapter() {
-		return this.chapter;
+	public String getChapterId() {
+		return this.chapterId;
 	}
 
-	public void setChapter(String chapter) {
-		this.chapter = chapter;
+	public void setChapterId(String chapterId) {
+		this.chapterId = chapterId;
 	}
 
 	@Override

@@ -40,7 +40,7 @@ public class OpinionController {
 	 * @return
 	 */
 	@RequestMappingName(value = "打开管理页面")
-	@RequestMapping(value = "toManagerPage",  method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
+	@RequestMapping(value = "toManagerPage",  method = RequestMethod.GET)
 	public String toManagerPage() {
 		return "opinion/opinion/opinionList";
 	}
@@ -80,7 +80,7 @@ public class OpinionController {
 	 * @return
 	 */
 	@RequestMappingName(value = "打开增加页面")
-	@RequestMapping(value = "toAddPage",  method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
+	@RequestMapping(value = "toAddPage",  method = RequestMethod.GET)
 	public String toAddPage() {
 		return "opinion/opinion/opinionAdd";
 	}
@@ -126,7 +126,7 @@ public class OpinionController {
 	 * @return
 	 */
 	@RequestMappingName(value = "打开修改页面")
-	@RequestMapping(value = "toUpdatePage/{opinionId}",  method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
+	@RequestMapping(value = "toUpdatePage/{opinionId}",  method = RequestMethod.GET)
 	public String toUpdatePage(@PathVariable("opinionId") String opinionId, Model model) {
 		model.addAttribute("opinion", opinionService.findById(opinionId));
 		return "opinion/opinion/opinionUpdate";
@@ -153,7 +153,7 @@ public class OpinionController {
 	 * @return
 	 */
 	@RequestMappingName(value = "打开详细页面")
-	@RequestMapping(value = "toDetailPage/{opinionId}",  method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
+	@RequestMapping(value = "toDetailPage/{opinionId}",  method = RequestMethod.GET)
 	public String toDetailPage(@PathVariable("opinionId") String opinionId, Model model) {
 		model.addAttribute("opinion", opinionService.findById(opinionId));
 		return "opinion/opinion/opinionDetail";

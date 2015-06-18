@@ -11,7 +11,7 @@
 			});
 			$("#query").bind("click",function(){
 				$('#dg').datagrid('load',{
-					search_chapter:$("#chapter").val(),
+					search_chapterId:$("#chapterId").val(),
 				});
 			});
 		});
@@ -33,7 +33,7 @@
        		</div>
        		<div data-options="region:'center',border:false" align="right">
     			所属章节：
-    			<input id="chapter" name="chapter" type="text" class="easyui-textbox textbox" value="${param.search_chapter}"/>
+    			<input id="chapterId" name="chapterId" type="text" class="easyui-textbox textbox" value="${param.search_chapterId}"/>
     			<a class="easyui-linkbutton" id="query" href="javascript:void(0)">查询</a>
        		</div>
 		</div>
@@ -48,7 +48,7 @@
 	                <th data-options="field:'topicScore',width:80">题目分值</th>
 	                <th data-options="field:'analysis',width:80">详解</th>
 	                <th data-options="field:'difficulty',width:80">难易度</th>
-	                <th data-options="field:'chapter',width:80">所属章节</th>
+	                <th data-options="field:'chapterId',width:80">所属章节</th>
 	                <th data-options="field:'id',width:80,formatter:format_manager">管理</th>
 	            </tr>
 	        </thead>

@@ -53,7 +53,7 @@
     			</tr>
     			<tr>
 					<td>所属章节：</td>
-    				<td><input id="chapter" name="chapter" type="text" class="text" value="${topic.chapter}"/></td>
+    				<td><input id="chapterId" name="chapterId" type="text" class="text" value="${topic.chapterId}"/></td>
     			</tr>
     			<tr>
     				<td colspan="2" align="center">

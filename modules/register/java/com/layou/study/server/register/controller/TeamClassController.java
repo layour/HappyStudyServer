@@ -37,7 +37,7 @@ public class TeamClassController {
 	 * @return
 	 */
 	@RequestMappingName(value = "打开管理页面")
-	@RequestMapping(value = "toManagerPage", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
+	@RequestMapping(value = "toManagerPage", method = RequestMethod.GET)
 	public String toManagerPage() {
 		return "register/teamClass/teamClassList";
 	}
@@ -98,7 +98,7 @@ public class TeamClassController {
 	 * @return
 	 */
 	@RequestMappingName(value = "打开增加页面")
-	@RequestMapping(value = "toAddPage",  method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
+	@RequestMapping(value = "toAddPage",  method = RequestMethod.GET)
 	public String toAddPage() {
 		return "register/teamClass/teamClassAdd";
 	}
@@ -123,7 +123,7 @@ public class TeamClassController {
 	 * @return
 	 */
 	@RequestMappingName(value = "打开修改页面")
-	@RequestMapping(value = "toUpdatePage/{teamClassId}",  method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
+	@RequestMapping(value = "toUpdatePage/{teamClassId}",  method = RequestMethod.GET)
 	public String toUpdatePage(@PathVariable("teamClassId") String teamClassId, Model model) {
 		model.addAttribute("teamClass", teamClassService.findById(teamClassId));
 		return "register/teamClass/teamClassUpdate";
@@ -150,7 +150,7 @@ public class TeamClassController {
 	 * @return
 	 */
 	@RequestMappingName(value = "打开详细页面")
-	@RequestMapping(value = "toDetailPage/{teamClassId}",  method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
+	@RequestMapping(value = "toDetailPage/{teamClassId}",  method = RequestMethod.GET)
 	public String toDetailPage(@PathVariable("teamClassId") String teamClassId, Model model) {
 		model.addAttribute("teamClass", teamClassService.findById(teamClassId));
 		return "register/teamClass/teamClassDetail";

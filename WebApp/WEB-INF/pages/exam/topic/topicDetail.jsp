@@ -42,7 +42,7 @@
 			</tr>
 			<tr>
 				<td>所属章节：</td>
-				<td><input name="chapter" value="${topic.chapter}" class="easyui-validatebox textbox" disabled="disabled" /></td>
+				<td><input name="chapterId" value="${topic.chapterId}" class="easyui-validatebox textbox" disabled="disabled" /></td>
 			</tr>
         	<tr>
 				<td colspan="2" align="center">

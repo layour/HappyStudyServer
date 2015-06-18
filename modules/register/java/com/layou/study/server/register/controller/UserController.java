@@ -38,7 +38,7 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMappingName(value = "打开管理页面")
-	@RequestMapping(value = "toManagerPage",  method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
+	@RequestMapping(value = "toManagerPage", method = RequestMethod.GET)
 	public String toManagerPage() {
 		return "register/user/userList";
 	}
@@ -113,7 +113,7 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMappingName(value = "打开增加页面")
-	@RequestMapping(value = "toAddPage",  method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
+	@RequestMapping(value = "toAddPage", method = RequestMethod.GET)
 	public String toAddPage() {
 		return "register/user/userAdd";
 	}
@@ -125,7 +125,7 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMappingName(value = "保存")
-	@RequestMapping(value = "save",  method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
+	@RequestMapping(value = "save", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
 	public String save(@Valid User user, RedirectAttributes redirectAttributes) {
 		userService.save(user);
 		return "register/user/userList";
@@ -158,7 +158,7 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMappingName(value = "打开修改页面")
-	@RequestMapping(value = "toUpdatePage/{userId}",  method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
+	@RequestMapping(value = "toUpdatePage/{userId}", method = RequestMethod.GET)
 	public String toUpdatePage(@PathVariable("userId") String userId, Model model) {
 		model.addAttribute("user", userService.findById(userId));
 		return "register/user/userUpdate";
@@ -185,7 +185,7 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMappingName(value = "打开详细页面")
-	@RequestMapping(value = "toDetailPage/{userId}",  method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
+	@RequestMapping(value = "toDetailPage/{userId}", method = RequestMethod.GET)
 	public String toDetailPage(@PathVariable("userId") String userId, Model model) {
 		model.addAttribute("user", userService.findById(userId));
 		return "register/user/userDetail";

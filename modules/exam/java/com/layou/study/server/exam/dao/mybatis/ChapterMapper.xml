@@ -5,7 +5,7 @@
   <!--查询一条记录-->
   <select id="findById" resultMap="ChapterMap">SELECT <include refid="columns"/> FROM HS_CHAPTER WHERE CHAPTER_ID=#{chapterId}</select>
   <!--查询所有记录-->
-  <select id="findAll" resultType="map">SELECT HC.CHAPTER_NAME AS chapterName, COUNT(HT.CHAPTER_ID) AS count FROM HS_CHAPTER HC LEFT JOIN HS_TOPIC HT ON HC.CHAPTER_ID=HT.CHAPTER_ID GROUP BY HC.CHAPTER_ID</select>
+  <select id="findAll" resultType="map">SELECT HC.CHAPTER_ID AS chapterId, HC.CHAPTER_NAME AS chapterName, COUNT(HT.CHAPTER_ID) AS count FROM HS_CHAPTER HC LEFT JOIN HS_TOPIC HT ON HC.CHAPTER_ID=HT.CHAPTER_ID GROUP BY HC.CHAPTER_ID</select>
   <!--按条件查询-->
   <select id="search" parameterType="map" resultMap="ChapterMap">SELECT <include refid="columns"/> FROM HS_CHAPTER
     <where>

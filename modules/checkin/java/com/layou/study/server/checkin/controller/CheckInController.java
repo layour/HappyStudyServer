@@ -39,7 +39,7 @@ public class CheckInController {
 	 * @return
 	 */
 	@RequestMappingName(value = "打开管理页面")
-	@RequestMapping(value = "toManagerPage",  method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
+	@RequestMapping(value = "toManagerPage",  method = RequestMethod.GET)
 	public String toManagerPage() {
 		return "checkin/checkIn/checkInList";
 	}
@@ -79,7 +79,7 @@ public class CheckInController {
 	 * @return
 	 */
 	@RequestMappingName(value = "打开增加页面")
-	@RequestMapping(value = "toAddPage",  method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
+	@RequestMapping(value = "toAddPage",  method = RequestMethod.GET)
 	public String toAddPage() {
 		return "checkin/checkIn/checkInAdd";
 	}
@@ -133,7 +133,7 @@ public class CheckInController {
 	 * @return
 	 */
 	@RequestMappingName(value = "打开修改页面")
-	@RequestMapping(value = "toUpdatePage/{checkId}",  method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
+	@RequestMapping(value = "toUpdatePage/{checkId}",  method = RequestMethod.GET)
 	public String toUpdatePage(@PathVariable("checkId") String checkId, Model model) {
 		model.addAttribute("checkIn", checkInService.findById(checkId));
 		return "checkin/checkIn/checkInUpdate";
@@ -160,7 +160,7 @@ public class CheckInController {
 	 * @return
 	 */
 	@RequestMappingName(value = "打开详细页面")
-	@RequestMapping(value = "toDetailPage/{checkId}",  method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
+	@RequestMapping(value = "toDetailPage/{checkId}", method = RequestMethod.GET)
 	public String toDetailPage(@PathVariable("checkId") String checkId, Model model) {
 		model.addAttribute("checkIn", checkInService.findById(checkId));
 		return "checkin/checkIn/checkInDetail";

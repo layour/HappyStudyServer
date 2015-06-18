@@ -52,7 +52,7 @@
     			</tr>
     			<tr class="control-group">
     				<td>所属章节：</td>
-    				<td><input id="chapter" name="chapter" type="text" class="text"/></td>
+    				<td><input id="chapterId" name="chapterId" type="text" class="text"/></td>
     			</tr>
     			<tr class="form-actions">
 					<td colspan="2" align="center">
