@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.layou.study.server.exam.dao.mybatis.CollectDao">
+  <!--查询一条记录-->
+  <select id="findById" resultMap="CollectMap">SELECT <include refid="columns"/> FROM HS_COLLECT WHERE COLLECT_ID=#{collectId}</select>
+  <!--分页查询-->
+  <select id="searchByPage" parameterType="map" resultMap="CollectMap">SELECT <include refid="columns"/> FROM HS_COLLECT
+    <where/>
+  </select>
+  <!--插入记录-->
+  <insert id="save" parameterType="Collect">INSERT INTO HS_COLLECT (<include refid="columns"/>) VALUES (#{collectId},#{topicId},#{userId})</insert>
+  <!--删除记录-->
+  <delete id="delete">DELETE FROM HS_COLLECT WHERE COLLECT_ID=#{collectId}</delete>
+  <!--删除记录-->
+  <delete id="deleteByUserTopic" parameterType="Collect">DELETE FROM HS_COLLECT WHERE TOPIC_ID=#{topicId} AND USER_ID=#{userId}</delete>
+  <!--修改记录-->
+  <update id="update" parameterType="Collect">UPDATE HS_COLLECT
+    <set>
+      <if test="topicId != null">TOPIC_ID = #{topicId}, </if>
+      <if test="userId != null">USER_ID = #{userId}, </if>
+    </set>WHERE COLLECT_ID=#{collectId}
+  </update>
+  <!--结果映射-->
+  <resultMap type="Collect" id="CollectMap">
+    <result column="COLLECT_ID" property="collectId"/>
+    <result column="TOPIC_ID" property="topicId"/>
+    <result column="USER_ID" property="userId"/>
+  </resultMap>
+  <!--查询字段-->
+  <sql id="columns">COLLECT_ID,TOPIC_ID,USER_ID</sql>
+</mapper>

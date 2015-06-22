@@ -36,6 +36,20 @@ public interface TopicDao {
 	List<Topic> findAll();
 	
 	/**
+	 * 按User查询
+	 * @param searchParams 条件
+	 * @return
+	 */
+	List<Topic> findByUser(Map<String,Object> searchParams);
+	
+	/**
+	 * 按UserChapter查询
+	 * @param searchParams 条件
+	 * @return
+	 */
+	List<Topic> findByUserChapter(Map<String,Object> searchParams);
+	
+	/**
 	 * 通过 topicId 获取一条记录
 	 * @param topicId 主键
 	 * @return

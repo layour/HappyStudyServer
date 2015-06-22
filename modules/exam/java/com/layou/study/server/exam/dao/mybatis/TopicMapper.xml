@@ -6,6 +6,10 @@
   <select id="findById" resultMap="TopicMap">SELECT <include refid="columns"/> FROM HS_TOPIC WHERE TOPIC_ID=#{topicId}</select>
   <!--查询所有记录-->
   <select id="findAll" resultMap="TopicMap">SELECT <include refid="columns"/> FROM HS_TOPIC</select>
+  <!--按User查询-->
+  <select id="findByUser" resultType="map">SELECT HTP.TOPIC_ID AS topicId, HTP.TOPIC AS topic, HTP.ANSWER AS answer, HTP.RIGHT_ANSWER AS rightAnswer, HTP.TOPIC_SCORE AS topicScore, HTP.ANALYSIS AS analysis, HTP.DIFFICULTY AS difficulty, HTP.CHAPTER_ID AS chapterId , IF(HCL.COLLECT_ID, 'true', 'false') AS collect FROM HS_TOPIC AS HTP LEFT JOIN (SELECT * FROM HS_COLLECT WHERE USER_ID = #{userId}) AS HCL ON HTP.TOPIC_ID = HCL.TOPIC_ID</select>
+  <!--按UserChapter查询-->
+  <select id="findByUserChapter" resultType="map">SELECT TOPIC_ID AS topicId, TOPIC AS topic, ANSWER AS answer, RIGHT_ANSWER AS rightAnswer, TOPIC_SCORE AS topicScore, ANALYSIS AS analysis, DIFFICULTY AS difficulty, CHAPTER_ID AS chapterId , IF(COLLECT_ID, 'true', 'false') AS collect FROM (SELECT HTP.*, HCL.COLLECT_ID FROM HS_TOPIC AS HTP LEFT JOIN (SELECT * FROM HS_COLLECT WHERE USER_ID = #{userId}) AS HCL ON HTP.TOPIC_ID = HCL.TOPIC_ID) AS SUB where SUB.CHAPTER_ID = #{chapterId}</select>
   <!--按条件查询-->
   <select id="search" parameterType="map" resultMap="TopicMap">SELECT <include refid="columns"/> FROM HS_TOPIC
     <where>

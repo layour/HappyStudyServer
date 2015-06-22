@@ -624,43 +624,43 @@
 </listField>
 </queryResult>
 <detailInfo id="8a82f0a84db7422d014db7473744009d" showType="" title="题目详细">
-<showField displayName="题目描述" fieldId="8a82f0bd4db21e5c014db3bca3b400ad" fieldName="topic" fieldType="java.lang.String" index="0">
+<showField displayName="题目描述" fieldId="8a82f0bd4db21e5c014db3bca3b400ad" fieldName="topic" fieldType="java.lang.String" index="0" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="topic" defaultValue="" name="name" type="property"/>
 <attr attrValue="topic" defaultValue="" name="id" type="property"/>
 </tag>
 </showField>
-<showField displayName="答案描述" fieldId="8a82f0bd4db21e5c014db3bca3b400ae" fieldName="answer" fieldType="java.lang.String" index="0">
+<showField displayName="答案描述" fieldId="8a82f0bd4db21e5c014db3bca3b400ae" fieldName="answer" fieldType="java.lang.String" index="0" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="answer" defaultValue="" name="name" type="property"/>
 <attr attrValue="answer" defaultValue="" name="id" type="property"/>
 </tag>
 </showField>
-<showField displayName="正确答案" fieldId="8a82f0bd4db21e5c014db3bca3b400af" fieldName="rightAnswer" fieldType="java.lang.String" index="0">
+<showField displayName="正确答案" fieldId="8a82f0bd4db21e5c014db3bca3b400af" fieldName="rightAnswer" fieldType="java.lang.String" index="0" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="rightAnswer" defaultValue="" name="name" type="property"/>
 <attr attrValue="rightAnswer" defaultValue="" name="id" type="property"/>
 </tag>
 </showField>
-<showField displayName="题目分值" fieldId="8a82f0a84db815e4014db817de780078" fieldName="topicScore" fieldType="java.lang.String" index="0">
+<showField displayName="题目分值" fieldId="8a82f0a84db815e4014db817de780078" fieldName="topicScore" fieldType="java.lang.String" index="0" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="topicScore" defaultValue="" name="name" type="property"/>
 <attr attrValue="topicScore" defaultValue="" name="id" type="property"/>
 </tag>
 </showField>
-<showField displayName="详解" fieldId="8a82f0bd4db21e5c014db3bca3b400b0" fieldName="analysis" fieldType="java.lang.String" index="0">
+<showField displayName="详解" fieldId="8a82f0bd4db21e5c014db3bca3b400b0" fieldName="analysis" fieldType="java.lang.String" index="0" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="analysis" defaultValue="" name="name" type="property"/>
 <attr attrValue="analysis" defaultValue="" name="id" type="property"/>
 </tag>
 </showField>
-<showField displayName="难易度" fieldId="8a82f0bd4db21e5c014db3bca3b400b1" fieldName="difficulty" fieldType="java.lang.String" index="0">
+<showField displayName="难易度" fieldId="8a82f0bd4db21e5c014db3bca3b400b1" fieldName="difficulty" fieldType="java.lang.String" index="0" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="difficulty" defaultValue="" name="name" type="property"/>
 <attr attrValue="difficulty" defaultValue="" name="id" type="property"/>
 </tag>
 </showField>
-<showField displayName="所属章节" fieldId="8a82f0a14df6fd8e014df736e4480236" fieldName="chapterId" fieldType="java.lang.String" index="0">
+<showField displayName="所属章节" fieldId="8a82f0a14df6fd8e014df736e4480236" fieldName="chapterId" fieldType="java.lang.String" index="0" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="chapterId" defaultValue="" name="name" type="property"/>
 <attr attrValue="chapterId" defaultValue="" name="id" type="property"/>
@@ -668,43 +668,43 @@
 </showField>
 </detailInfo>
 <form id="8a82f0a84db7422d014db7473744009c" showType="" title="添加题目">
-<addField displayName="题目描述" fieldId="8a82f0bd4db21e5c014db3bca3b400ad" fieldName="topic" fieldType="java.lang.String" index="0" isDisplay="true">
+<addField displayName="题目描述" fieldId="8a82f0bd4db21e5c014db3bca3b400ad" fieldName="topic" fieldType="java.lang.String" index="0" isDisplay="true" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="topic" defaultValue="" name="name" type="property"/>
 <attr attrValue="topic" defaultValue="" name="id" type="property"/>
 </tag>
 </addField>
-<addField displayName="答案描述" fieldId="8a82f0bd4db21e5c014db3bca3b400ae" fieldName="answer" fieldType="java.lang.String" index="0" isDisplay="true">
+<addField displayName="答案描述" fieldId="8a82f0bd4db21e5c014db3bca3b400ae" fieldName="answer" fieldType="java.lang.String" index="0" isDisplay="true" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="answer" defaultValue="" name="name" type="property"/>
 <attr attrValue="answer" defaultValue="" name="id" type="property"/>
 </tag>
 </addField>
-<addField displayName="正确答案" fieldId="8a82f0bd4db21e5c014db3bca3b400af" fieldName="rightAnswer" fieldType="java.lang.String" index="0" isDisplay="true">
+<addField displayName="正确答案" fieldId="8a82f0bd4db21e5c014db3bca3b400af" fieldName="rightAnswer" fieldType="java.lang.String" index="0" isDisplay="true" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="rightAnswer" defaultValue="" name="name" type="property"/>
 <attr attrValue="rightAnswer" defaultValue="" name="id" type="property"/>
 </tag>
 </addField>
-<addField displayName="题目分值" fieldId="8a82f0a84db815e4014db817de780078" fieldName="topicScore" fieldType="java.lang.String" index="0" isDisplay="true">
+<addField displayName="题目分值" fieldId="8a82f0a84db815e4014db817de780078" fieldName="topicScore" fieldType="java.lang.String" index="0" isDisplay="true" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="topicScore" defaultValue="" name="name" type="property"/>
 <attr attrValue="topicScore" defaultValue="" name="id" type="property"/>
 </tag>
 </addField>
-<addField displayName="详解" fieldId="8a82f0bd4db21e5c014db3bca3b400b0" fieldName="analysis" fieldType="java.lang.String" index="0" isDisplay="true">
+<addField displayName="详解" fieldId="8a82f0bd4db21e5c014db3bca3b400b0" fieldName="analysis" fieldType="java.lang.String" index="0" isDisplay="true" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="analysis" defaultValue="" name="name" type="property"/>
 <attr attrValue="analysis" defaultValue="" name="id" type="property"/>
 </tag>
 </addField>
-<addField displayName="难易度" fieldId="8a82f0bd4db21e5c014db3bca3b400b1" fieldName="difficulty" fieldType="java.lang.String" index="0" isDisplay="true">
+<addField displayName="难易度" fieldId="8a82f0bd4db21e5c014db3bca3b400b1" fieldName="difficulty" fieldType="java.lang.String" index="0" isDisplay="true" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="difficulty" defaultValue="" name="name" type="property"/>
 <attr attrValue="difficulty" defaultValue="" name="id" type="property"/>
 </tag>
 </addField>
-<addField displayName="所属章节" fieldId="8a82f0a14df6fd8e014df736e4480236" fieldName="chapterId" fieldType="java.lang.String" index="0" isDisplay="true">
+<addField displayName="所属章节" fieldId="8a82f0a14df6fd8e014df736e4480236" fieldName="chapterId" fieldType="java.lang.String" index="0" isDisplay="true" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="chapterId" defaultValue="" name="name" type="property"/>
 <attr attrValue="chapterId" defaultValue="" name="id" type="property"/>
@@ -747,13 +747,10 @@
 <form id="402881ea4db9088d014db9d0059d013c" showType="" title=""/>
 </viewModel>
 </entity>
-<entity author="" description="" displayName="收藏" entityType="persistent" genStrategy="uuid" id="402881ea4db9088d014db9aafff000b1" isSetViewModel="false" name="UserTopic" schema="" tableName="HS_USER_TOPIC">
-<location height="112" wide="230" x="33" y="236"/>
+<entity author="" description="" displayName="收藏" entityType="persistent" genStrategy="uuid" id="402881ea4db9088d014db9aafff000b1" isSetViewModel="false" name="Collect" schema="" tableName="HS_COLLECT">
+<location height="96" wide="230" x="33" y="236"/>
 <fields>
-<field FK="false" PK="true" columnName="USER_TOPIC_ID" columnType="" default="" description="" displayName="用户题目ID" fieldName="userTopicId" fieldType="java.lang.String" id="402881ea4db9088d014db9bd523800bb" length="" nullAble="true" persistent="true" precision="">
-<refVentityFields/>
-</field>
-<field FK="false" PK="false" columnName="COLLECT" columnType="" default="" description="" displayName="标记收藏" fieldName="collect" fieldType="java.lang.String" id="402881ea4db9088d014db9aaf8af00b0" length="" nullAble="false" persistent="true" precision="">
+<field FK="false" PK="true" columnName="COLLECT_ID" columnType="" default="" description="" displayName="收藏ID" fieldName="collectId" fieldType="java.lang.String" id="402881ea4db9088d014db9bd523800bb" length="" nullAble="true" persistent="true" precision="">
 <refVentityFields/>
 </field>
 <field FK="false" PK="false" columnName="TOPIC_ID" columnType="" default="" description="" displayName="题目ID" fieldName="topicId" fieldType="java.lang.String" id="402881ea4db9088d014db9aaf8af00af" length="" nullAble="false" persistent="true" precision="">
@@ -824,15 +821,15 @@
 </listField>
 </queryResult>
 <detailInfo id="8a82f0cc4dff7f14014e00f537c10754" showType="" title="章节详细">
-<showField displayName="章节名称" fieldId="8a82f0cc4dff7f14014e00f453c4072b" fieldName="chapterName" fieldType="java.lang.String" index="0">
+<showField displayName="章节名称" fieldId="8a82f0cc4dff7f14014e00f453c4072b" fieldName="chapterName" fieldType="java.lang.String" index="0" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="chapterName" defaultValue="" name="name" type="property"/>
 <attr attrValue="chapterName" defaultValue="" name="id" type="property"/>
 </tag>
 </showField>
 </detailInfo>
-<form id="8a82f0cc4dff7f14014e00f537c10753" title="添加章节">
-<addField displayName="章节名称" fieldId="8a82f0cc4dff7f14014e00f453c4072b" fieldName="chapterName" fieldType="java.lang.String" index="0" isDisplay="true">
+<form id="8a82f0cc4dff7f14014e00f537c10753" showType="" title="添加章节">
+<addField displayName="章节名称" fieldId="8a82f0cc4dff7f14014e00f453c4072b" fieldName="chapterName" fieldType="java.lang.String" index="0" isDisplay="true" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="chapterName" defaultValue="" name="name" type="property"/>
 <attr attrValue="chapterName" defaultValue="" name="id" type="property"/>

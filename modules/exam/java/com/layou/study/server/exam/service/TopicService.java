@@ -46,6 +46,24 @@ public class TopicService {
 	}
 	
 	/**
+	 * 按User查询
+	 * @param searchParams 条件
+	 * @return
+	 */
+	public List<Topic> findByUser(Map<String,Object> searchParams) {
+		return (List<Topic>) topicDao.findByUser(searchParams);
+	}
+	
+	/**
+	 * 按UserChapter查询
+	 * @param searchParams 条件
+	 * @return
+	 */
+	public List<Topic> findByUserChapter(Map<String,Object> searchParams) {
+		return (List<Topic>) topicDao.findByUserChapter(searchParams);
+	}
+	
+	/**
 	 * 通过topicId获取一条记录
 	 * @param topicId 主键
 	 * @return

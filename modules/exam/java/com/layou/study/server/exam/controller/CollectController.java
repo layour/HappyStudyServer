@@ -1,5 +1,6 @@
 package com.layou.study.server.exam.controller;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -26,11 +27,11 @@ import core.spring.RequestMappingName;
 import core.utils.jackson.JacksonUtil;
 
 @Controller
-@RequestMapping(value = "/topic")
-public class TopicController {
+@RequestMapping(value = "/collect")
+public class CollectController {
 	
 	@Autowired
-	private TopicService topicService;
+	private CollectService collectService;
 	
 	/**
 	 * 跳转到管理页面
@@ -39,7 +40,7 @@ public class TopicController {
 	@RequestMappingName(value = "打开管理页面")
 	@RequestMapping(value = "toManagerPage", method = RequestMethod.GET)
 	public String toManagerPage() {
-		return "exam/topic/topicList";
+		return "exam/collect/collectList";
 	}
 	
 	/**
@@ -64,48 +65,10 @@ public class TopicController {
 		page.setPageSize(pageSize);
 		searchParams.put("page", page);
 		
-		List<Topic> topics = topicService.searchByPage(searchParams);
+		List<Collect> collects = collectService.searchByPage(searchParams);
 		
-		model.addAttribute("total", topics.size());
-		model.addAttribute("rows", topics);
-		
-		return new JacksonUtil().getJson(model);
-	}
-	
-	/**
-	 * 按User查询
-	 * @param model
-	 * @param request
-	 * @return
-	 */
-	@RequestMappingName(value = "查询列表")
-	@RequestMapping(value = "findByUser", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
-	public @ResponseBody String findByUser(Model model, ServletRequest request) {
-		Map<String, Object> searchParams = Servlets.getParametersStartingWith(request, "search_");
-		
-		List<Topic> topics = topicService.findByUser(searchParams);
-		
-		model.addAttribute("total", topics.size());
-		model.addAttribute("rows", topics);
-		
-		return new JacksonUtil().getJson(model);
-	}
-	
-	/**
-	 * 按UserChapter查询
-	 * @param model
-	 * @param request
-	 * @return
-	 */
-	@RequestMappingName(value = "查询列表")
-	@RequestMapping(value = "findByUserChapter", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
-	public @ResponseBody String findByUserChapter(Model model, ServletRequest request) {
-		Map<String, Object> searchParams = Servlets.getParametersStartingWith(request, "search_");
-		
-		List<Topic> topics = topicService.findByUserChapter(searchParams);
-		
-		model.addAttribute("total", topics.size());
-		model.addAttribute("rows", topics);
+		model.addAttribute("total", pageSize * pageNumber * 10);
+		model.addAttribute("rows", collects);
 		
 		return new JacksonUtil().getJson(model);
 	}
@@ -117,73 +80,111 @@ public class TopicController {
 	@RequestMappingName(value = "打开增加页面")
 	@RequestMapping(value = "toAddPage", method = RequestMethod.GET)
 	public String toAddPage() {
-		return "exam/topic/topicAdd";
+		return "exam/collect/collectAdd";
 	}
 	
 	/**
 	 * 执行保存操作
-	 * @param topic
+	 * @param collect
 	 * @param redirectAttributes
 	 * @return
 	 */
 	@RequestMappingName(value = "保存")
 	@RequestMapping(value = "save", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
-	public String save(@Valid Topic topic, RedirectAttributes redirectAttributes) {
-		topicService.save(topic);
-		return "exam/topic/topicList";
+	public String save(@Valid Collect collect, RedirectAttributes redirectAttributes) {
+		collectService.save(collect);
+		return "exam/collect/collectList";
+	}
+	
+	/**
+	 * 执行保存操作
+	 * @param collect
+	 * @param redirectAttributes
+	 * @return
+	 */
+	@RequestMappingName(value = "保存")
+	@RequestMapping(value = "mobileSave", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
+	@ResponseBody
+	public String mobileSave(@Valid Collect collect) {
+		collectService.save(collect);
+		
+		Map<String, String> result = new HashMap<String, String>();
+		result.put("code", "0");
+		result.put("msg", "收藏成功");
+		
+		return new JacksonUtil().getJson(result);
 	}
 	
 	/**
 	 * 跳转到修改页面
-	 * @param topicId
+	 * @param collectId
 	 * @param model
 	 * @return
 	 */
 	@RequestMappingName(value = "打开修改页面")
-	@RequestMapping(value = "toUpdatePage/{topicId}", method = RequestMethod.GET)
-	public String toUpdatePage(@PathVariable("topicId") String topicId, Model model) {
-		model.addAttribute("topic", topicService.findById(topicId));
-		return "exam/topic/topicUpdate";
+	@RequestMapping(value = "toUpdatePage/{collectId}", method = RequestMethod.GET)
+	public String toUpdatePage(@PathVariable("collectId") String collectId, Model model) {
+		model.addAttribute("collect", collectService.findById(collectId));
+		return "exam/collect/collectUpdate";
 	}
 	
 	/**
 	 * 执行修改操作
-	 * @param topic
+	 * @param collect
 	 * @param redirectAttributes
 	 * @return
 	 */
 	@RequestMappingName(value = "修改")
 	@RequestMapping(value = "update", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
-	public String update(@Valid @ModelAttribute("topic") Topic topic, RedirectAttributes redirectAttributes) {
-		topicService.update(topic);
+	public String update(@Valid @ModelAttribute("collect") Collect collect, RedirectAttributes redirectAttributes) {
+		collectService.update(collect);
 		redirectAttributes.addFlashAttribute("message", "更新成功");
-		return "exam/topic/topicList";
+		return "exam/collect/collectList";
 	}
 	
 	/**
 	 * 跳转详细页面
-	 * @param topicId
+	 * @param collectId
 	 * @param model
 	 * @return
 	 */
 	@RequestMappingName(value = "打开详细页面")
-	@RequestMapping(value = "toDetailPage/{topicId}", method = RequestMethod.GET)
-	public String toDetailPage(@PathVariable("topicId") String topicId, Model model) {
-		model.addAttribute("topic", topicService.findById(topicId));
-		return "exam/topic/topicDetail";
+	@RequestMapping(value = "toDetailPage/{collectId}", method = RequestMethod.GET)
+	public String toDetailPage(@PathVariable("collectId") String collectId, Model model) {
+		model.addAttribute("collect", collectService.findById(collectId));
+		return "exam/collect/collectDetail";
 	}
 	
 	/**
 	 * 执行删除操作
-	 * @param topicId
+	 * @param collectId
 	 * @param redirectAttributes
 	 * @return
 	 */
 	@RequestMappingName(value = "删除")
-	@RequestMapping(value = "delete/{topicId}")
-	public String delete(@PathVariable("topicId") String topicId, RedirectAttributes redirectAttributes) {
-		topicService.delete(topicId);
+	@RequestMapping(value = "delete/{collectId}")
+	public String delete(@PathVariable("collectId") String collectId, RedirectAttributes redirectAttributes) {
+		collectService.delete(collectId);
 		redirectAttributes.addFlashAttribute("message", "删除成功");
-		return "exam/topic/topicList";
+		return "exam/collect/collectList";
+	}
+	
+	/**
+	 * 执行删除操作
+	 * @param collect
+	 * @param redirectAttributes
+	 * @return
+	 */
+	@RequestMappingName(value = "删除")
+	@RequestMapping(value = "mobileDelete", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
+	@ResponseBody
+	public String mobileDelete(@Valid Collect collect) {
+		collectService.deleteByUserTopic(collect);
+		
+		Map<String, String> result = new HashMap<String, String>();
+		result.put("code", "0");
+		result.put("msg", "取消成功");
+		
+		return new JacksonUtil().getJson(result);
 	}
 }
