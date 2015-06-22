@@ -50,8 +50,17 @@ public class TopicService {
 	 * @param searchParams 条件
 	 * @return
 	 */
-	public List<Topic> findByUser(Map<String,Object> searchParams) {
-		return (List<Topic>) topicDao.findByUser(searchParams);
+	public List<Topic> findTopicByUser(Map<String,Object> searchParams) {
+		return (List<Topic>) topicDao.findTopicByUser(searchParams);
+	}
+	
+	/**
+	 * 按User查询
+	 * @param searchParams 条件
+	 * @return
+	 */
+	public List<Topic> findCollectByUser(Map<String,Object> searchParams) {
+		return (List<Topic>) topicDao.findCollectByUser(searchParams);
 	}
 	
 	/**
@@ -59,8 +68,8 @@ public class TopicService {
 	 * @param searchParams 条件
 	 * @return
 	 */
-	public List<Topic> findByUserChapter(Map<String,Object> searchParams) {
-		return (List<Topic>) topicDao.findByUserChapter(searchParams);
+	public List<Topic> findTopicByUserChapter(Map<String,Object> searchParams) {
+		return (List<Topic>) topicDao.findTopicByUserChapter(searchParams);
 	}
 	
 	/**

@@ -79,11 +79,30 @@ public class TopicController {
 	 * @return
 	 */
 	@RequestMappingName(value = "查询列表")
-	@RequestMapping(value = "findByUser", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
-	public @ResponseBody String findByUser(Model model, ServletRequest request) {
+	@RequestMapping(value = "findTopicByUser", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
+	public @ResponseBody String findTopicByUser(Model model, ServletRequest request) {
 		Map<String, Object> searchParams = Servlets.getParametersStartingWith(request, "search_");
 		
-		List<Topic> topics = topicService.findByUser(searchParams);
+		List<Topic> topics = topicService.findTopicByUser(searchParams);
+		
+		model.addAttribute("total", topics.size());
+		model.addAttribute("rows", topics);
+		
+		return new JacksonUtil().getJson(model);
+	}
+	
+	/**
+	 * 按User查询
+	 * @param model
+	 * @param request
+	 * @return
+	 */
+	@RequestMappingName(value = "查询列表")
+	@RequestMapping(value = "findCollectByUser", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
+	public @ResponseBody String findCollectByUser(Model model, ServletRequest request) {
+		Map<String, Object> searchParams = Servlets.getParametersStartingWith(request, "search_");
+		
+		List<Topic> topics = topicService.findCollectByUser(searchParams);
 		
 		model.addAttribute("total", topics.size());
 		model.addAttribute("rows", topics);
@@ -98,11 +117,11 @@ public class TopicController {
 	 * @return
 	 */
 	@RequestMappingName(value = "查询列表")
-	@RequestMapping(value = "findByUserChapter", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
-	public @ResponseBody String findByUserChapter(Model model, ServletRequest request) {
+	@RequestMapping(value = "findTopicByUserChapter", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
+	public @ResponseBody String findTopicByUserChapter(Model model, ServletRequest request) {
 		Map<String, Object> searchParams = Servlets.getParametersStartingWith(request, "search_");
 		
-		List<Topic> topics = topicService.findByUserChapter(searchParams);
+		List<Topic> topics = topicService.findTopicByUserChapter(searchParams);
 		
 		model.addAttribute("total", topics.size());
 		model.addAttribute("rows", topics);
