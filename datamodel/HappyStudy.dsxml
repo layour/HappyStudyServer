@@ -770,7 +770,7 @@
 </viewModel>
 </entity>
 <entity author="" description="" displayName="题目试卷" entityType="persistent" genStrategy="uuid" id="8a82f0a64dbc153a014dbc1b402400ea" isSetViewModel="false" name="PaperTopic" schema="" tableName="HS_PAPER_TOPIC">
-<location height="91" wide="232" x="32" y="360"/>
+<location height="91" wide="232" x="31" y="429"/>
 <fields>
 <field FK="false" PK="true" columnName="PAPER_TOPIC_ID" columnType="" default="" description="" displayName="试卷题目ID" fieldName="paperTopicId" fieldType="java.lang.String" id="8a82f0a64dbc153a014dbc2519c100f4" length="" nullAble="true" persistent="true" precision="">
 <refVentityFields/>
@@ -792,7 +792,7 @@
 </viewModel>
 </entity>
 <entity author="" description="" displayName="章节" entityType="persistent" genStrategy="uuid" id="8a82f0cc4dff7f14014e00f45c44072c" isSetViewModel="true" name="Chapter" schema="" tableName="HS_CHAPTER">
-<location height="68" wide="220" x="31" y="463"/>
+<location height="68" wide="220" x="33" y="342"/>
 <fields>
 <field FK="false" PK="true" columnName="CHAPTER_ID" columnType="" default="" description="" displayName="章节ID" fieldName="chapterId" fieldType="java.lang.String" id="8a82f0cc4dff7f14014e00f453c4072a" length="" nullAble="true" persistent="true" precision="">
 <refVentityFields/>
