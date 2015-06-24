@@ -481,8 +481,8 @@
 </form>
 </viewModel>
 </entity>
-<entity author="" description="" displayName="试卷" entityType="persistent" genStrategy="uuid" id="8a82f0bd4db21e5c014db3820bc00097" isSetViewModel="false" name="Paper" schema="" tableName="HS_PAPER">
-<location height="128" wide="220" x="272" y="490"/>
+<entity author="" description="" displayName="试卷" entityType="persistent" genStrategy="uuid" id="8a82f0bd4db21e5c014db3820bc00097" isSetViewModel="true" name="Paper" schema="" tableName="HS_PAPER">
+<location height="148" wide="220" x="272" y="490"/>
 <fields>
 <field FK="false" PK="true" columnName="PAPER_ID" columnType="" default="" description="" displayName="试卷ID" fieldName="paperId" fieldType="java.lang.String" id="402881ea4db9088d014db9c156bc00c3" length="" nullAble="true" persistent="true" precision="">
 <refVentityFields/>
@@ -499,14 +499,117 @@
 <field FK="false" PK="false" columnName="PAPER_TIME" columnType="" default="" description="" displayName="组卷时间" fieldName="paperTime" fieldType="java.lang.String" id="8a82f0a64dbc153a014dbc1f29b300ee" length="" nullAble="false" persistent="true" precision="">
 <refVentityFields/>
 </field>
+<field FK="false" PK="false" columnName="ENABLED" columnType="" default="" description="" displayName="是否可用" fieldName="enabled" fieldType="java.lang.String" id="8a82f09b4e233073014e242322690642" length="" nullAble="false" persistent="true" precision="">
+<refVentityFields/>
+</field>
 </fields>
 <relations/>
 <refVentityFields/>
 <viewModel>
-<queryForm exportExcel="false" id="8a82f0a84db7422d014db74737440092" isDistinct="false" isTotalRows="false" orderFields="" orders="" pageSize="15" title=""/>
-<queryResult id="8a82f0a84db7422d014db74737440093" rowSelectType="checkbox" title=""/>
-<detailInfo id="8a82f0a84db7422d014db74737440095" showType="" title=""/>
-<form id="8a82f0a84db7422d014db74737440094" showType="" title=""/>
+<queryForm exportExcel="false" id="8a82f0a84db7422d014db74737440092" isDistinct="false" isTotalRows="false" orderFields="paperTime" orders="asc" pageSize="15" title="">
+<queryField columnSpan="0" displayName="试卷名称" fieldId="8a82f0bd4db21e5c014db382094b0093" fieldName="paperName" fieldType="java.lang.String" index="0" operator="=" rowSpan="0">
+<tag type="text">
+<attr attrValue="paperName" defaultValue="" name="name" type="property"/>
+<attr attrValue="paperName" defaultValue="" name="id" type="property"/>
+</tag>
+</queryField>
+</queryForm>
+<queryResult id="8a82f0a84db7422d014db74737440093" rowSelectType="checkbox" title="查询试卷">
+<listField displayName="试卷名称" fieldId="8a82f0bd4db21e5c014db382094b0093" fieldName="paperName" fieldType="java.lang.String" index="0" width="">
+<tag type="text">
+<attr attrValue="paperName" defaultValue="" name="name" type="property"/>
+<attr attrValue="paperName" defaultValue="" name="id" type="property"/>
+</tag>
+</listField>
+<listField displayName="题目数" fieldId="8a82f0bd4db21e5c014db382094b0094" fieldName="topicCount" fieldType="java.lang.String" index="0" width="">
+<tag type="text">
+<attr attrValue="topicCount" defaultValue="" name="name" type="property"/>
+<attr attrValue="topicCount" defaultValue="" name="id" type="property"/>
+</tag>
+</listField>
+<listField displayName="总分" fieldId="8a82f0a84db7422d014db7517b90009f" fieldName="totalScore" fieldType="java.lang.String" index="0" width="">
+<tag type="text">
+<attr attrValue="totalScore" defaultValue="" name="name" type="property"/>
+<attr attrValue="totalScore" defaultValue="" name="id" type="property"/>
+</tag>
+</listField>
+<listField displayName="组卷时间" fieldId="8a82f0a64dbc153a014dbc1f29b300ee" fieldName="paperTime" fieldType="java.lang.String" index="0" width="">
+<tag type="text">
+<attr attrValue="paperTime" defaultValue="" name="name" type="property"/>
+<attr attrValue="paperTime" defaultValue="" name="id" type="property"/>
+</tag>
+</listField>
+<listField displayName="是否可用" fieldId="8a82f09b4e233073014e242322690642" fieldName="enabled" fieldType="java.lang.String" index="0" width="">
+<tag type="text">
+<attr attrValue="enabled" defaultValue="" name="name" type="property"/>
+<attr attrValue="enabled" defaultValue="" name="id" type="property"/>
+</tag>
+</listField>
+</queryResult>
+<detailInfo id="8a82f0a84db7422d014db74737440095" showType="" title="试卷详细">
+<showField displayName="试卷名称" fieldId="8a82f0bd4db21e5c014db382094b0093" fieldName="paperName" fieldType="java.lang.String" index="0">
+<tag type="text">
+<attr attrValue="paperName" defaultValue="" name="name" type="property"/>
+<attr attrValue="paperName" defaultValue="" name="id" type="property"/>
+</tag>
+</showField>
+<showField displayName="题目数" fieldId="8a82f0bd4db21e5c014db382094b0094" fieldName="topicCount" fieldType="java.lang.String" index="0">
+<tag type="text">
+<attr attrValue="topicCount" defaultValue="" name="name" type="property"/>
+<attr attrValue="topicCount" defaultValue="" name="id" type="property"/>
+</tag>
+</showField>
+<showField displayName="总分" fieldId="8a82f0a84db7422d014db7517b90009f" fieldName="totalScore" fieldType="java.lang.String" index="0">
+<tag type="text">
+<attr attrValue="totalScore" defaultValue="" name="name" type="property"/>
+<attr attrValue="totalScore" defaultValue="" name="id" type="property"/>
+</tag>
+</showField>
+<showField displayName="组卷时间" fieldId="8a82f0a64dbc153a014dbc1f29b300ee" fieldName="paperTime" fieldType="java.lang.String" index="0">
+<tag type="text">
+<attr attrValue="paperTime" defaultValue="" name="name" type="property"/>
+<attr attrValue="paperTime" defaultValue="" name="id" type="property"/>
+</tag>
+</showField>
+<showField displayName="是否可用" fieldId="8a82f09b4e233073014e242322690642" fieldName="enabled" fieldType="java.lang.String" index="0">
+<tag type="text">
+<attr attrValue="enabled" defaultValue="" name="name" type="property"/>
+<attr attrValue="enabled" defaultValue="" name="id" type="property"/>
+</tag>
+</showField>
+</detailInfo>
+<form id="8a82f0a84db7422d014db74737440094" showType="" title="添加试卷">
+<addField displayName="试卷名称" fieldId="8a82f0bd4db21e5c014db382094b0093" fieldName="paperName" fieldType="java.lang.String" index="0" isDisplay="true">
+<tag type="text">
+<attr attrValue="paperName" defaultValue="" name="name" type="property"/>
+<attr attrValue="paperName" defaultValue="" name="id" type="property"/>
+</tag>
+</addField>
+<addField displayName="题目数" fieldId="8a82f0bd4db21e5c014db382094b0094" fieldName="topicCount" fieldType="java.lang.String" index="0" isDisplay="true">
+<tag type="text">
+<attr attrValue="topicCount" defaultValue="" name="name" type="property"/>
+<attr attrValue="topicCount" defaultValue="" name="id" type="property"/>
+</tag>
+</addField>
+<addField displayName="总分" fieldId="8a82f0a84db7422d014db7517b90009f" fieldName="totalScore" fieldType="java.lang.String" index="0" isDisplay="true">
+<tag type="text">
+<attr attrValue="totalScore" defaultValue="" name="name" type="property"/>
+<attr attrValue="totalScore" defaultValue="" name="id" type="property"/>
+</tag>
+</addField>
+<addField displayName="组卷时间" fieldId="8a82f0a64dbc153a014dbc1f29b300ee" fieldName="paperTime" fieldType="java.lang.String" index="0" isDisplay="true">
+<tag type="text">
+<attr attrValue="paperTime" defaultValue="" name="name" type="property"/>
+<attr attrValue="paperTime" defaultValue="" name="id" type="property"/>
+</tag>
+</addField>
+<addField displayName="是否可用" fieldId="8a82f09b4e233073014e242322690642" fieldName="enabled" fieldType="java.lang.String" index="0" isDisplay="true">
+<tag type="text">
+<attr attrValue="enabled" defaultValue="" name="name" type="property"/>
+<attr attrValue="enabled" defaultValue="" name="id" type="property"/>
+</tag>
+</addField>
+</form>
 </viewModel>
 </entity>
 <entity author="" description="" displayName="考试记录" entityType="persistent" genStrategy="uuid" id="8a82f0bd4db21e5c014db384cdbe00a1" isSetViewModel="false" name="ExamRecord" schema="" tableName="HS_EXAM_RECORD">
@@ -769,7 +872,7 @@
 <form id="402881ea4db9088d014db9d0059d014c" showType="" title=""/>
 </viewModel>
 </entity>
-<entity author="" description="" displayName="题目试卷" entityType="persistent" genStrategy="uuid" id="8a82f0a64dbc153a014dbc1b402400ea" isSetViewModel="false" name="PaperTopic" schema="" tableName="HS_PAPER_TOPIC">
+<entity author="" description="" displayName="题目试卷" entityType="persistent" genStrategy="uuid" id="8a82f0a64dbc153a014dbc1b402400ea" isSetViewModel="true" name="PaperTopic" schema="" tableName="HS_PAPER_TOPIC">
 <location height="91" wide="232" x="31" y="429"/>
 <fields>
 <field FK="false" PK="true" columnName="PAPER_TOPIC_ID" columnType="" default="" description="" displayName="试卷题目ID" fieldName="paperTopicId" fieldType="java.lang.String" id="8a82f0a64dbc153a014dbc2519c100f4" length="" nullAble="true" persistent="true" precision="">
@@ -785,10 +888,62 @@
 <relations/>
 <refVentityFields/>
 <viewModel>
-<queryForm exportExcel="false" id="8a82f0a64dbc153a014dbe6b1c1b064a" isDistinct="false" isTotalRows="false" orderFields="" orders="" pageSize="15" title=""/>
-<queryResult id="8a82f0a64dbc153a014dbe6b1c1b064b" rowSelectType="checkbox" title=""/>
-<detailInfo id="8a82f0a64dbc153a014dbe6b1c1b064d" showType="" title=""/>
-<form id="8a82f0a64dbc153a014dbe6b1c1b064c" showType="" title=""/>
+<queryForm exportExcel="false" id="8a82f0a64dbc153a014dbe6b1c1b064a" isDistinct="false" isTotalRows="false" orderFields="" orders="" pageSize="15" title="">
+<queryField columnSpan="0" displayName="试卷ID" fieldId="8a82f0a64dbc153a014dbc202eb500f1" fieldName="paperId" fieldType="java.lang.String" index="0" operator="=" rowSpan="0">
+<tag type="text">
+<attr attrValue="paperId" defaultValue="" name="name" type="property"/>
+<attr attrValue="paperId" defaultValue="" name="id" type="property"/>
+</tag>
+</queryField>
+<queryField columnSpan="0" displayName="题目ID" fieldId="8a82f0a64dbc153a014dbc202eb500f2" fieldName="topicId" fieldType="java.lang.String" index="0" operator="=" rowSpan="0">
+<tag type="text">
+<attr attrValue="topicId" defaultValue="" name="name" type="property"/>
+<attr attrValue="topicId" defaultValue="" name="id" type="property"/>
+</tag>
+</queryField>
+</queryForm>
+<queryResult id="8a82f0a64dbc153a014dbe6b1c1b064b" rowSelectType="checkbox" title="题目试卷">
+<listField displayName="试卷ID" fieldId="8a82f0a64dbc153a014dbc202eb500f1" fieldName="paperId" fieldType="java.lang.String" index="0" width="">
+<tag type="text">
+<attr attrValue="paperId" defaultValue="" name="name" type="property"/>
+<attr attrValue="paperId" defaultValue="" name="id" type="property"/>
+</tag>
+</listField>
+<listField displayName="题目ID" fieldId="8a82f0a64dbc153a014dbc202eb500f2" fieldName="topicId" fieldType="java.lang.String" index="0" width="">
+<tag type="text">
+<attr attrValue="topicId" defaultValue="" name="name" type="property"/>
+<attr attrValue="topicId" defaultValue="" name="id" type="property"/>
+</tag>
+</listField>
+</queryResult>
+<detailInfo id="8a82f0a64dbc153a014dbe6b1c1b064d" showType="" title="题目试卷详细">
+<showField displayName="试卷ID" fieldId="8a82f0a64dbc153a014dbc202eb500f1" fieldName="paperId" fieldType="java.lang.String" index="0">
+<tag type="text">
+<attr attrValue="paperId" defaultValue="" name="name" type="property"/>
+<attr attrValue="paperId" defaultValue="" name="id" type="property"/>
+</tag>
+</showField>
+<showField displayName="题目ID" fieldId="8a82f0a64dbc153a014dbc202eb500f2" fieldName="topicId" fieldType="java.lang.String" index="0">
+<tag type="text">
+<attr attrValue="topicId" defaultValue="" name="name" type="property"/>
+<attr attrValue="topicId" defaultValue="" name="id" type="property"/>
+</tag>
+</showField>
+</detailInfo>
+<form id="8a82f0a64dbc153a014dbe6b1c1b064c" showType="" title="添加题目">
+<addField displayName="试卷ID" fieldId="8a82f0a64dbc153a014dbc202eb500f1" fieldName="paperId" fieldType="java.lang.String" index="0" isDisplay="true">
+<tag type="text">
+<attr attrValue="paperId" defaultValue="" name="name" type="property"/>
+<attr attrValue="paperId" defaultValue="" name="id" type="property"/>
+</tag>
+</addField>
+<addField displayName="题目ID" fieldId="8a82f0a64dbc153a014dbc202eb500f2" fieldName="topicId" fieldType="java.lang.String" index="0" isDisplay="true">
+<tag type="text">
+<attr attrValue="topicId" defaultValue="" name="name" type="property"/>
+<attr attrValue="topicId" defaultValue="" name="id" type="property"/>
+</tag>
+</addField>
+</form>
 </viewModel>
 </entity>
 <entity author="" description="" displayName="章节" entityType="persistent" genStrategy="uuid" id="8a82f0cc4dff7f14014e00f45c44072c" isSetViewModel="true" name="Chapter" schema="" tableName="HS_CHAPTER">

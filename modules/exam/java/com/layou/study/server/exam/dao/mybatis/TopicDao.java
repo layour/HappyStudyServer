@@ -36,6 +36,13 @@ public interface TopicDao {
 	List<Topic> findAll();
 	
 	/**
+	 * 按Paper查询题目
+	 * @param searchParams 条件
+	 * @return
+	 */
+	List<Topic> findTopicByPaper(Map<String,Object> searchParams);
+	
+	/**
 	 * 按User查询题目
 	 * @param searchParams 条件
 	 * @return

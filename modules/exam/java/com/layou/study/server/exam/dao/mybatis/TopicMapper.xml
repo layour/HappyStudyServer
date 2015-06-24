@@ -7,6 +7,8 @@
   <!--查询所有记录-->
   <select id="findAll" resultMap="TopicMap">SELECT <include refid="columns"/> FROM HS_TOPIC</select>
   <!--按User查询题目-->
+  <select id="findTopicByPaper" resultType="map">SELECT HPT.PAPER_ID as paperId, HTP.TOPIC_ID AS topicId, HTP.TOPIC AS topic, HTP.ANSWER AS answer, HTP.RIGHT_ANSWER AS rightAnswer, HTP.TOPIC_SCORE AS topicScore, HTP.ANALYSIS AS analysis, HTP.DIFFICULTY AS difficulty, HTP.CHAPTER_ID AS chapterId FROM (SELECT * FROM HS_PAPER_TOPIC WHERE PAPER_ID = #{paperId}) AS HPT LEFT JOIN HS_TOPIC AS HTP ON HPT.TOPIC_ID = HTP.TOPIC_ID</select>
+  <!--按User查询题目-->
   <select id="findTopicByUser" resultType="map">SELECT HTP.TOPIC_ID AS topicId, HTP.TOPIC AS topic, HTP.ANSWER AS answer, HTP.RIGHT_ANSWER AS rightAnswer, HTP.TOPIC_SCORE AS topicScore, HTP.ANALYSIS AS analysis, HTP.DIFFICULTY AS difficulty, HTP.CHAPTER_ID AS chapterId , IF(HCL.COLLECT_ID, 'true', 'false') AS collect FROM HS_TOPIC AS HTP LEFT JOIN (SELECT * FROM HS_COLLECT WHERE USER_ID = #{userId}) AS HCL ON HTP.TOPIC_ID = HCL.TOPIC_ID</select>
   <!--按User查询收藏-->
   <select id="findCollectByUser" resultType="map">SELECT HTP.TOPIC_ID AS topicId, HTP.TOPIC AS topic, HTP.ANSWER AS answer, HTP.RIGHT_ANSWER AS rightAnswer, HTP.TOPIC_SCORE AS topicScore, HTP.ANALYSIS AS analysis, HTP.DIFFICULTY AS difficulty, HTP.CHAPTER_ID AS chapterId, HCL.COLLECT_ID AS collectId FROM HS_TOPIC AS HTP RIGHT JOIN (SELECT * FROM HS_COLLECT WHERE USER_ID = #{userId}) AS HCL ON HTP.TOPIC_ID = HCL.TOPIC_ID</select>

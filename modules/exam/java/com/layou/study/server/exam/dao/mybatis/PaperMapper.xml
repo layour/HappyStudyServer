@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.layou.study.server.exam.dao.mybatis.PaperDao">
+  <!--查询一条记录-->
+  <select id="findById" resultMap="PaperMap">SELECT <include refid="columns"/> FROM HS_PAPER WHERE PAPER_ID=#{paperId}</select>
+  <!--查询所有记录-->
+  <select id="findAll" resultMap="PaperMap">SELECT <include refid="columns"/> FROM HS_PAPER</select>
+  <!--按条件查询-->
+  <select id="search" parameterType="map" resultMap="PaperMap">SELECT <include refid="columns"/> FROM HS_PAPER
+    <where>
+      <if test="paperName != null and paperName != ''">PAPER_NAME LIKE CONCAT('%',#{paperName},'%')</if>
+    </where>
+  </select>
+  <!--分页查询-->
+  <select id="searchByPage" parameterType="map" resultMap="PaperMap">SELECT <include refid="columns"/> FROM HS_PAPER
+    <where>
+      <if test="paperName != null and paperName != ''">PAPER_NAME LIKE CONCAT('%',#{paperName},'%')</if>
+    </where>
+  </select>
+  <!--插入记录-->
+  <insert id="save" parameterType="Paper">INSERT INTO HS_PAPER (<include refid="columns"/>) VALUES (#{paperId},#{paperName},#{topicCount},#{totalScore},#{paperTime},#{enabled})</insert>
+  <!--删除记录-->
+  <delete id="delete">DELETE FROM HS_PAPER WHERE PAPER_ID=#{paperId}</delete>
+  <!--修改记录-->
+  <update id="update" parameterType="Paper">UPDATE HS_PAPER
+    <set>
+      <if test="paperName != null">PAPER_NAME = #{paperName}, </if>
+      <if test="topicCount != null">TOPIC_COUNT = #{topicCount}, </if>
+      <if test="totalScore != null">TOTAL_SCORE = #{totalScore}, </if>
+      <if test="paperTime != null">PAPER_TIME = #{paperTime}, </if>
+      <if test="enabled != null">ENABLED = #{enabled}, </if>
+    </set>WHERE PAPER_ID=#{paperId}
+  </update>
+  <!--结果映射-->
+  <resultMap type="Paper" id="PaperMap">
+    <result column="PAPER_ID" property="paperId"/>
+    <result column="PAPER_NAME" property="paperName"/>
+    <result column="TOPIC_COUNT" property="topicCount"/>
+    <result column="TOTAL_SCORE" property="totalScore"/>
+    <result column="PAPER_TIME" property="paperTime"/>
+    <result column="ENABLED" property="enabled"/>
+  </resultMap>
+  <!--查询字段-->
+  <sql id="columns">PAPER_ID,PAPER_NAME,TOPIC_COUNT,TOTAL_SCORE,PAPER_TIME,ENABLED</sql>
+</mapper>

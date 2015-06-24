@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.layou.study.server.exam.dao.mybatis.PaperTopicDao">
+  <!--查询一条记录-->
+  <select id="findById" resultMap="PaperTopicMap">SELECT <include refid="columns"/> FROM HS_PAPER_TOPIC WHERE PAPER_TOPIC_ID=#{paperTopicId}</select>
+  <!--查询所有记录-->
+  <select id="findAll" resultMap="PaperTopicMap">SELECT <include refid="columns"/> FROM HS_PAPER_TOPIC</select>
+  <!--按条件查询-->
+  <select id="search" parameterType="map" resultMap="PaperTopicMap">SELECT <include refid="columns"/> FROM HS_PAPER_TOPIC
+    <where>
+      <if test="paperId != null and paperId != ''">PAPER_ID LIKE CONCAT('%',#{paperId},'%')</if>
+      <if test="topicId != null and topicId != ''">AND TOPIC_ID LIKE CONCAT('%',#{topicId},'%')</if>
+    </where>
+  </select>
+  <!--分页查询-->
+  <select id="searchByPage" parameterType="map" resultMap="PaperTopicMap">SELECT <include refid="columns"/> FROM HS_PAPER_TOPIC
+    <where>
+      <if test="paperId != null and paperId != ''">PAPER_ID LIKE CONCAT('%',#{paperId},'%')</if>
+      <if test="topicId != null and topicId != ''">AND TOPIC_ID LIKE CONCAT('%',#{topicId},'%')</if>
+    </where>
+  </select>
+  <!--插入记录-->
+  <insert id="save" parameterType="PaperTopic">INSERT INTO HS_PAPER_TOPIC (<include refid="columns"/>) VALUES (#{paperTopicId},#{paperId},#{topicId})</insert>
+  <!--删除记录-->
+  <delete id="delete">DELETE FROM HS_PAPER_TOPIC WHERE PAPER_TOPIC_ID=#{paperTopicId}</delete>
+  <!--修改记录-->
+  <update id="update" parameterType="PaperTopic">UPDATE HS_PAPER_TOPIC
+    <set>
+      <if test="paperId != null">PAPER_ID = #{paperId}, </if>
+      <if test="topicId != null">TOPIC_ID = #{topicId}, </if>
+    </set>WHERE PAPER_TOPIC_ID=#{paperTopicId}
+  </update>
+  <!--结果映射-->
+  <resultMap type="PaperTopic" id="PaperTopicMap">
+    <result column="PAPER_TOPIC_ID" property="paperTopicId"/>
+    <result column="PAPER_ID" property="paperId"/>
+    <result column="TOPIC_ID" property="topicId"/>
+  </resultMap>
+  <!--查询字段-->
+  <sql id="columns">PAPER_TOPIC_ID,PAPER_ID,TOPIC_ID</sql>
+</mapper>

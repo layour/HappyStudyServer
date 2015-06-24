@@ -73,6 +73,25 @@ public class TopicController {
 	}
 	
 	/**
+	 * 按Paper查询
+	 * @param model
+	 * @param request
+	 * @return
+	 */
+	@RequestMappingName(value = "查询列表")
+	@RequestMapping(value = "findTopicByPaper", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
+	public @ResponseBody String findTopicByPaper(Model model, ServletRequest request) {
+		Map<String, Object> searchParams = Servlets.getParametersStartingWith(request, "search_");
+		
+		List<Topic> topics = topicService.findTopicByPaper(searchParams);
+		
+		model.addAttribute("total", topics.size());
+		model.addAttribute("rows", topics);
+		
+		return new JacksonUtil().getJson(model);
+	}
+	
+	/**
 	 * 按User查询
 	 * @param model
 	 * @param request

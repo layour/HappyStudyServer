@@ -46,6 +46,15 @@ public class TopicService {
 	}
 	
 	/**
+	 * 按Paper查询
+	 * @param searchParams 条件
+	 * @return
+	 */
+	public List<Topic> findTopicByPaper(Map<String,Object> searchParams) {
+		return (List<Topic>) topicDao.findTopicByPaper(searchParams);
+	}
+	
+	/**
 	 * 按User查询
 	 * @param searchParams 条件
 	 * @return
