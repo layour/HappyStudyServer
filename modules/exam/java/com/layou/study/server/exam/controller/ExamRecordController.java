@@ -26,11 +26,11 @@ import core.spring.RequestMappingName;
 import core.utils.jackson.JacksonUtil;
 
 @Controller
-@RequestMapping(value = "/paperTopic")
-public class PaperTopicController {
+@RequestMapping(value = "/examRecord")
+public class ExamRecordController {
 	
 	@Autowired
-	private PaperTopicService paperTopicService;
+	private ExamRecordService examRecordService;
 	
 	/**
 	 * 跳转到管理页面
@@ -39,7 +39,7 @@ public class PaperTopicController {
 	@RequestMappingName(value = "打开管理页面")
 	@RequestMapping(value = "toManagerPage", method = RequestMethod.GET)
 	public String toManagerPage() {
-		return "exam/paperTopic/paperTopicList";
+		return "exam/examRecord/examRecordList";
 	}
 	
 	/**
@@ -64,10 +64,10 @@ public class PaperTopicController {
 		page.setPageSize(pageSize);
 		searchParams.put("page", page);
 		
-		List<PaperTopic> paperTopics = paperTopicService.searchByPage(searchParams);
+		List<ExamRecord> examRecords = examRecordService.searchByPage(searchParams);
 		
 		model.addAttribute("total", pageSize * pageNumber * 10);
-		model.addAttribute("rows", paperTopics);
+		model.addAttribute("rows", examRecords);
 		
 		return new JacksonUtil().getJson(model);
 	}
@@ -79,73 +79,73 @@ public class PaperTopicController {
 	@RequestMappingName(value = "打开增加页面")
 	@RequestMapping(value = "toAddPage", method = RequestMethod.GET)
 	public String toAddPage() {
-		return "exam/paperTopic/paperTopicAdd";
+		return "exam/examRecord/examRecordAdd";
 	}
 	
 	/**
 	 * 执行保存操作
-	 * @param paperTopic
+	 * @param examRecord
 	 * @param redirectAttributes
 	 * @return
 	 */
 	@RequestMappingName(value = "保存")
 	@RequestMapping(value = "save", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
-	public String save(@Valid PaperTopic paperTopic, RedirectAttributes redirectAttributes) {
-		paperTopicService.save(paperTopic);
-		return "exam/paperTopic/paperTopicList";
+	public String save(@Valid ExamRecord examRecord, RedirectAttributes redirectAttributes) {
+		examRecordService.save(examRecord);
+		return "exam/examRecord/examRecordList";
 	}
 	
 	/**
 	 * 跳转到修改页面
-	 * @param paperTopicId
+	 * @param examRecordId
 	 * @param model
 	 * @return
 	 */
 	@RequestMappingName(value = "打开修改页面")
-	@RequestMapping(value = "toUpdatePage/{paperTopicId}", method = RequestMethod.GET)
-	public String toUpdatePage(@PathVariable("paperTopicId") String paperTopicId, Model model) {
-		model.addAttribute("paperTopic", paperTopicService.findById(paperTopicId));
-		return "exam/paperTopic/paperTopicUpdate";
+	@RequestMapping(value = "toUpdatePage/{examRecordId}", method = RequestMethod.GET)
+	public String toUpdatePage(@PathVariable("examRecordId") String examRecordId, Model model) {
+		model.addAttribute("examRecord", examRecordService.findById(examRecordId));
+		return "exam/examRecord/examRecordUpdate";
 	}
 	
 	/**
 	 * 执行修改操作
-	 * @param paperTopic
+	 * @param examRecord
 	 * @param redirectAttributes
 	 * @return
 	 */
 	@RequestMappingName(value = "修改")
 	@RequestMapping(value = "update", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
-	public String update(@Valid @ModelAttribute("paperTopic") PaperTopic paperTopic, RedirectAttributes redirectAttributes) {
-		paperTopicService.update(paperTopic);
+	public String update(@Valid @ModelAttribute("examRecord") ExamRecord examRecord, RedirectAttributes redirectAttributes) {
+		examRecordService.update(examRecord);
 		redirectAttributes.addFlashAttribute("message", "更新成功");
-		return "exam/paperTopic/paperTopicList";
+		return "exam/examRecord/examRecordList";
 	}
 	
 	/**
 	 * 跳转详细页面
-	 * @param paperTopicId
+	 * @param examRecordId
 	 * @param model
 	 * @return
 	 */
 	@RequestMappingName(value = "打开详细页面")
-	@RequestMapping(value = "toDetailPage/{paperTopicId}", method = RequestMethod.GET)
-	public String toDetailPage(@PathVariable("paperTopicId") String paperTopicId, Model model) {
-		model.addAttribute("paperTopic", paperTopicService.findById(paperTopicId));
-		return "exam/paperTopic/paperTopicDetail";
+	@RequestMapping(value = "toDetailPage/{examRecordId}", method = RequestMethod.GET)
+	public String toDetailPage(@PathVariable("examRecordId") String examRecordId, Model model) {
+		model.addAttribute("examRecord", examRecordService.findById(examRecordId));
+		return "exam/examRecord/examRecordDetail";
 	}
 	
 	/**
 	 * 执行删除操作
-	 * @param paperTopicId
+	 * @param examRecordId
 	 * @param redirectAttributes
 	 * @return
 	 */
 	@RequestMappingName(value = "删除")
-	@RequestMapping(value = "delete/{paperTopicId}")
-	public String delete(@PathVariable("paperTopicId") String paperTopicId, RedirectAttributes redirectAttributes) {
-		paperTopicService.delete(paperTopicId);
+	@RequestMapping(value = "delete/{examRecordId}")
+	public String delete(@PathVariable("examRecordId") String examRecordId, RedirectAttributes redirectAttributes) {
+		examRecordService.delete(examRecordId);
 		redirectAttributes.addFlashAttribute("message", "删除成功");
-		return "exam/paperTopic/paperTopicList";
+		return "exam/examRecord/examRecordList";
 	}
 }

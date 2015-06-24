@@ -52,7 +52,7 @@ public class PaperController {
 	 * @return
 	 */
 	@RequestMappingName(value = "查询列表")
-	@RequestMapping(value = "list", method = RequestMethod.GET)
+	@RequestMapping(value = "list", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
 	public @ResponseBody String list(@RequestParam(value = "page", defaultValue = "1") int pageNumber,
 			@RequestParam(value = "page.size", defaultValue = PageParameter.DEFAULT_PAGE_SIZE+"") int pageSize, 
 			Model model, ServletRequest request) {
@@ -89,7 +89,7 @@ public class PaperController {
 	 * @return
 	 */
 	@RequestMappingName(value = "保存")
-	@RequestMapping(value = "save", method = RequestMethod.POST)
+	@RequestMapping(value = "save", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
 	public String save(@Valid Paper paper, RedirectAttributes redirectAttributes) {
 		paperService.save(paper);
 		return "exam/paper/paperList";
@@ -115,7 +115,7 @@ public class PaperController {
 	 * @return
 	 */
 	@RequestMappingName(value = "修改")
-	@RequestMapping(value = "update", method = RequestMethod.POST)
+	@RequestMapping(value = "update", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
 	public String update(@Valid @ModelAttribute("paper") Paper paper, RedirectAttributes redirectAttributes) {
 		paperService.update(paper);
 		redirectAttributes.addFlashAttribute("message", "更新成功");

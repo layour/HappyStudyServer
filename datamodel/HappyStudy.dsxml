@@ -547,31 +547,31 @@
 </listField>
 </queryResult>
 <detailInfo id="8a82f0a84db7422d014db74737440095" showType="" title="试卷详细">
-<showField displayName="试卷名称" fieldId="8a82f0bd4db21e5c014db382094b0093" fieldName="paperName" fieldType="java.lang.String" index="0">
+<showField displayName="试卷名称" fieldId="8a82f0bd4db21e5c014db382094b0093" fieldName="paperName" fieldType="java.lang.String" index="0" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="paperName" defaultValue="" name="name" type="property"/>
 <attr attrValue="paperName" defaultValue="" name="id" type="property"/>
 </tag>
 </showField>
-<showField displayName="题目数" fieldId="8a82f0bd4db21e5c014db382094b0094" fieldName="topicCount" fieldType="java.lang.String" index="0">
+<showField displayName="题目数" fieldId="8a82f0bd4db21e5c014db382094b0094" fieldName="topicCount" fieldType="java.lang.String" index="0" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="topicCount" defaultValue="" name="name" type="property"/>
 <attr attrValue="topicCount" defaultValue="" name="id" type="property"/>
 </tag>
 </showField>
-<showField displayName="总分" fieldId="8a82f0a84db7422d014db7517b90009f" fieldName="totalScore" fieldType="java.lang.String" index="0">
+<showField displayName="总分" fieldId="8a82f0a84db7422d014db7517b90009f" fieldName="totalScore" fieldType="java.lang.String" index="0" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="totalScore" defaultValue="" name="name" type="property"/>
 <attr attrValue="totalScore" defaultValue="" name="id" type="property"/>
 </tag>
 </showField>
-<showField displayName="组卷时间" fieldId="8a82f0a64dbc153a014dbc1f29b300ee" fieldName="paperTime" fieldType="java.lang.String" index="0">
+<showField displayName="组卷时间" fieldId="8a82f0a64dbc153a014dbc1f29b300ee" fieldName="paperTime" fieldType="java.lang.String" index="0" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="paperTime" defaultValue="" name="name" type="property"/>
 <attr attrValue="paperTime" defaultValue="" name="id" type="property"/>
 </tag>
 </showField>
-<showField displayName="是否可用" fieldId="8a82f09b4e233073014e242322690642" fieldName="enabled" fieldType="java.lang.String" index="0">
+<showField displayName="是否可用" fieldId="8a82f09b4e233073014e242322690642" fieldName="enabled" fieldType="java.lang.String" index="0" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="enabled" defaultValue="" name="name" type="property"/>
 <attr attrValue="enabled" defaultValue="" name="id" type="property"/>
@@ -579,31 +579,31 @@
 </showField>
 </detailInfo>
 <form id="8a82f0a84db7422d014db74737440094" showType="" title="添加试卷">
-<addField displayName="试卷名称" fieldId="8a82f0bd4db21e5c014db382094b0093" fieldName="paperName" fieldType="java.lang.String" index="0" isDisplay="true">
+<addField displayName="试卷名称" fieldId="8a82f0bd4db21e5c014db382094b0093" fieldName="paperName" fieldType="java.lang.String" index="0" isDisplay="true" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="paperName" defaultValue="" name="name" type="property"/>
 <attr attrValue="paperName" defaultValue="" name="id" type="property"/>
 </tag>
 </addField>
-<addField displayName="题目数" fieldId="8a82f0bd4db21e5c014db382094b0094" fieldName="topicCount" fieldType="java.lang.String" index="0" isDisplay="true">
+<addField displayName="题目数" fieldId="8a82f0bd4db21e5c014db382094b0094" fieldName="topicCount" fieldType="java.lang.String" index="0" isDisplay="true" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="topicCount" defaultValue="" name="name" type="property"/>
 <attr attrValue="topicCount" defaultValue="" name="id" type="property"/>
 </tag>
 </addField>
-<addField displayName="总分" fieldId="8a82f0a84db7422d014db7517b90009f" fieldName="totalScore" fieldType="java.lang.String" index="0" isDisplay="true">
+<addField displayName="总分" fieldId="8a82f0a84db7422d014db7517b90009f" fieldName="totalScore" fieldType="java.lang.String" index="0" isDisplay="true" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="totalScore" defaultValue="" name="name" type="property"/>
 <attr attrValue="totalScore" defaultValue="" name="id" type="property"/>
 </tag>
 </addField>
-<addField displayName="组卷时间" fieldId="8a82f0a64dbc153a014dbc1f29b300ee" fieldName="paperTime" fieldType="java.lang.String" index="0" isDisplay="true">
+<addField displayName="组卷时间" fieldId="8a82f0a64dbc153a014dbc1f29b300ee" fieldName="paperTime" fieldType="java.lang.String" index="0" isDisplay="true" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="paperTime" defaultValue="" name="name" type="property"/>
 <attr attrValue="paperTime" defaultValue="" name="id" type="property"/>
 </tag>
 </addField>
-<addField displayName="是否可用" fieldId="8a82f09b4e233073014e242322690642" fieldName="enabled" fieldType="java.lang.String" index="0" isDisplay="true">
+<addField displayName="是否可用" fieldId="8a82f09b4e233073014e242322690642" fieldName="enabled" fieldType="java.lang.String" index="0" isDisplay="true" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="enabled" defaultValue="" name="name" type="property"/>
 <attr attrValue="enabled" defaultValue="" name="id" type="property"/>
@@ -612,7 +612,7 @@
 </form>
 </viewModel>
 </entity>
-<entity author="" description="" displayName="考试记录" entityType="persistent" genStrategy="uuid" id="8a82f0bd4db21e5c014db384cdbe00a1" isSetViewModel="false" name="ExamRecord" schema="" tableName="HS_EXAM_RECORD">
+<entity author="" description="" displayName="考试记录" entityType="persistent" genStrategy="uuid" id="8a82f0bd4db21e5c014db384cdbe00a1" isSetViewModel="true" name="ExamRecord" schema="" tableName="HS_EXAM_RECORD">
 <location height="150" wide="230" x="525" y="383"/>
 <fields>
 <field FK="false" PK="true" columnName="EXAM_RECORD_ID" columnType="" default="" description="" displayName="考试记录ID" fieldName="examRecordId" fieldType="java.lang.String" id="8a82f0bd4db21e5c014db384cb62009d" length="" nullAble="true" persistent="true" precision="">
@@ -621,7 +621,7 @@
 <field FK="false" PK="false" columnName="EXAM_SCORE" columnType="" default="" description="" displayName="考试得分" fieldName="examScore" fieldType="java.lang.String" id="8a82f0bd4db21e5c014db384cb62009e" length="" nullAble="false" persistent="true" precision="">
 <refVentityFields/>
 </field>
-<field FK="false" PK="false" columnName="EXAM_TIME" columnType="" default="" description="" displayName="考试时间" fieldName="eamTime" fieldType="java.lang.String" id="8a82f0bd4db21e5c014db384cb62009f" length="" nullAble="false" persistent="true" precision="">
+<field FK="false" PK="false" columnName="EXAM_TIME" columnType="" default="" description="" displayName="考试时间" fieldName="examTime" fieldType="java.lang.String" id="8a82f0bd4db21e5c014db384cb62009f" length="" nullAble="false" persistent="true" precision="">
 <refVentityFields/>
 </field>
 <field FK="false" PK="false" columnName="USE_TIME" columnType="" default="" description="" displayName="用时" fieldName="useTime" fieldType="java.lang.String" id="8a82f0bd4db21e5c014db384cb6200a0" length="" nullAble="false" persistent="true" precision="">
@@ -637,10 +637,110 @@
 <relations/>
 <refVentityFields/>
 <viewModel>
-<queryForm exportExcel="false" id="8a82f0a84db7422d014db74737440096" isDistinct="false" isTotalRows="false" orderFields="" orders="" pageSize="15" title=""/>
-<queryResult id="8a82f0a84db7422d014db74737440097" rowSelectType="checkbox" title=""/>
-<detailInfo id="8a82f0a84db7422d014db74737440099" showType="" title=""/>
-<form id="8a82f0a84db7422d014db74737440098" showType="" title=""/>
+<queryForm exportExcel="false" id="8a82f0a84db7422d014db74737440096" isDistinct="false" isTotalRows="false" orderFields="examTime" orders="asc" pageSize="15" title="">
+<queryField columnSpan="0" displayName="考试时间" fieldId="8a82f0bd4db21e5c014db384cb62009f" fieldName="examTime" fieldType="java.lang.String" index="0" operator="=" rowSpan="0">
+<tag type="text">
+<attr attrValue="examTime" defaultValue="" name="name" type="property"/>
+<attr attrValue="examTime" defaultValue="" name="id" type="property"/>
+</tag>
+</queryField>
+</queryForm>
+<queryResult id="8a82f0a84db7422d014db74737440097" rowSelectType="checkbox" title="查询考试记录">
+<listField displayName="考试得分" fieldId="8a82f0bd4db21e5c014db384cb62009e" fieldName="examScore" fieldType="java.lang.String" index="0" width="">
+<tag type="text">
+<attr attrValue="examScore" defaultValue="" name="name" type="property"/>
+<attr attrValue="examScore" defaultValue="" name="id" type="property"/>
+</tag>
+</listField>
+<listField displayName="考试时间" fieldId="8a82f0bd4db21e5c014db384cb62009f" fieldName="examTime" fieldType="java.lang.String" index="0" width="">
+<tag type="text">
+<attr attrValue="examTime" defaultValue="" name="name" type="property"/>
+<attr attrValue="examTime" defaultValue="" name="id" type="property"/>
+</tag>
+</listField>
+<listField displayName="用时" fieldId="8a82f0bd4db21e5c014db384cb6200a0" fieldName="useTime" fieldType="java.lang.String" index="0" width="">
+<tag type="text">
+<attr attrValue="useTime" defaultValue="" name="name" type="property"/>
+<attr attrValue="useTime" defaultValue="" name="id" type="property"/>
+</tag>
+</listField>
+<listField displayName="用户ID" fieldId="402881ea4db9088d014db9aba4c000b3" fieldName="userId" fieldType="java.lang.String" index="0" width="">
+<tag type="text">
+<attr attrValue="userId" defaultValue="" name="name" type="property"/>
+<attr attrValue="userId" defaultValue="" name="id" type="property"/>
+</tag>
+</listField>
+<listField displayName="试卷ID" fieldId="8a82f0a64dbc153a014dbc3246cc00f6" fieldName="paperId" fieldType="java.lang.String" index="0" width="">
+<tag type="text">
+<attr attrValue="paperId" defaultValue="" name="name" type="property"/>
+<attr attrValue="paperId" defaultValue="" name="id" type="property"/>
+</tag>
+</listField>
+</queryResult>
+<detailInfo id="8a82f0a84db7422d014db74737440099" showType="" title="考试记录详细">
+<showField displayName="考试得分" fieldId="8a82f0bd4db21e5c014db384cb62009e" fieldName="examScore" fieldType="java.lang.String" index="0">
+<tag type="text">
+<attr attrValue="examScore" defaultValue="" name="name" type="property"/>
+<attr attrValue="examScore" defaultValue="" name="id" type="property"/>
+</tag>
+</showField>
+<showField displayName="考试时间" fieldId="8a82f0bd4db21e5c014db384cb62009f" fieldName="examTime" fieldType="java.lang.String" index="0">
+<tag type="text">
+<attr attrValue="examTime" defaultValue="" name="name" type="property"/>
+<attr attrValue="examTime" defaultValue="" name="id" type="property"/>
+</tag>
+</showField>
+<showField displayName="用时" fieldId="8a82f0bd4db21e5c014db384cb6200a0" fieldName="useTime" fieldType="java.lang.String" index="0">
+<tag type="text">
+<attr attrValue="useTime" defaultValue="" name="name" type="property"/>
+<attr attrValue="useTime" defaultValue="" name="id" type="property"/>
+</tag>
+</showField>
+<showField displayName="用户ID" fieldId="402881ea4db9088d014db9aba4c000b3" fieldName="userId" fieldType="java.lang.String" index="0">
+<tag type="text">
+<attr attrValue="userId" defaultValue="" name="name" type="property"/>
+<attr attrValue="userId" defaultValue="" name="id" type="property"/>
+</tag>
+</showField>
+<showField displayName="试卷ID" fieldId="8a82f0a64dbc153a014dbc3246cc00f6" fieldName="paperId" fieldType="java.lang.String" index="0">
+<tag type="text">
+<attr attrValue="paperId" defaultValue="" name="name" type="property"/>
+<attr attrValue="paperId" defaultValue="" name="id" type="property"/>
+</tag>
+</showField>
+</detailInfo>
+<form id="8a82f0a84db7422d014db74737440098" showType="" title="添加考试记录">
+<addField displayName="考试得分" fieldId="8a82f0bd4db21e5c014db384cb62009e" fieldName="examScore" fieldType="java.lang.String" index="0" isDisplay="true">
+<tag type="text">
+<attr attrValue="examScore" defaultValue="" name="name" type="property"/>
+<attr attrValue="examScore" defaultValue="" name="id" type="property"/>
+</tag>
+</addField>
+<addField displayName="考试时间" fieldId="8a82f0bd4db21e5c014db384cb62009f" fieldName="examTime" fieldType="java.lang.String" index="0" isDisplay="true">
+<tag type="text">
+<attr attrValue="examTime" defaultValue="" name="name" type="property"/>
+<attr attrValue="examTime" defaultValue="" name="id" type="property"/>
+</tag>
+</addField>
+<addField displayName="用时" fieldId="8a82f0bd4db21e5c014db384cb6200a0" fieldName="useTime" fieldType="java.lang.String" index="0" isDisplay="true">
+<tag type="text">
+<attr attrValue="useTime" defaultValue="" name="name" type="property"/>
+<attr attrValue="useTime" defaultValue="" name="id" type="property"/>
+</tag>
+</addField>
+<addField displayName="用户ID" fieldId="402881ea4db9088d014db9aba4c000b3" fieldName="userId" fieldType="java.lang.String" index="0" isDisplay="true">
+<tag type="text">
+<attr attrValue="userId" defaultValue="" name="name" type="property"/>
+<attr attrValue="userId" defaultValue="" name="id" type="property"/>
+</tag>
+</addField>
+<addField displayName="试卷ID" fieldId="8a82f0a64dbc153a014dbc3246cc00f6" fieldName="paperId" fieldType="java.lang.String" index="0" isDisplay="true">
+<tag type="text">
+<attr attrValue="paperId" defaultValue="" name="name" type="property"/>
+<attr attrValue="paperId" defaultValue="" name="id" type="property"/>
+</tag>
+</addField>
+</form>
 </viewModel>
 </entity>
 <entity author="" description="" displayName="题目" entityType="persistent" genStrategy="uuid" id="8a82f0bd4db21e5c014db3bca98100b5" isSetViewModel="true" name="Topic" schema="" tableName="HS_TOPIC">
@@ -917,13 +1017,13 @@
 </listField>
 </queryResult>
 <detailInfo id="8a82f0a64dbc153a014dbe6b1c1b064d" showType="" title="题目试卷详细">
-<showField displayName="试卷ID" fieldId="8a82f0a64dbc153a014dbc202eb500f1" fieldName="paperId" fieldType="java.lang.String" index="0">
+<showField displayName="试卷ID" fieldId="8a82f0a64dbc153a014dbc202eb500f1" fieldName="paperId" fieldType="java.lang.String" index="0" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="paperId" defaultValue="" name="name" type="property"/>
 <attr attrValue="paperId" defaultValue="" name="id" type="property"/>
 </tag>
 </showField>
-<showField displayName="题目ID" fieldId="8a82f0a64dbc153a014dbc202eb500f2" fieldName="topicId" fieldType="java.lang.String" index="0">
+<showField displayName="题目ID" fieldId="8a82f0a64dbc153a014dbc202eb500f2" fieldName="topicId" fieldType="java.lang.String" index="0" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="topicId" defaultValue="" name="name" type="property"/>
 <attr attrValue="topicId" defaultValue="" name="id" type="property"/>
@@ -931,13 +1031,13 @@
 </showField>
 </detailInfo>
 <form id="8a82f0a64dbc153a014dbe6b1c1b064c" showType="" title="添加题目">
-<addField displayName="试卷ID" fieldId="8a82f0a64dbc153a014dbc202eb500f1" fieldName="paperId" fieldType="java.lang.String" index="0" isDisplay="true">
+<addField displayName="试卷ID" fieldId="8a82f0a64dbc153a014dbc202eb500f1" fieldName="paperId" fieldType="java.lang.String" index="0" isDisplay="true" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="paperId" defaultValue="" name="name" type="property"/>
 <attr attrValue="paperId" defaultValue="" name="id" type="property"/>
 </tag>
 </addField>
-<addField displayName="题目ID" fieldId="8a82f0a64dbc153a014dbc202eb500f2" fieldName="topicId" fieldType="java.lang.String" index="0" isDisplay="true">
+<addField displayName="题目ID" fieldId="8a82f0a64dbc153a014dbc202eb500f2" fieldName="topicId" fieldType="java.lang.String" index="0" isDisplay="true" refDataset="HappyStudy.dsxml" refEntityId="" refFieldId="">
 <tag type="text">
 <attr attrValue="topicId" defaultValue="" name="name" type="property"/>
 <attr attrValue="topicId" defaultValue="" name="id" type="property"/>
