@@ -33,7 +33,7 @@
     			</tr>
     			<tr>
 					<td>考试时间：</td>
-    				<td><input id="eamTime" name="eamTime" type="text" class="text" value="${examRecord.eamTime}"/></td>
+    				<td><input id="examTime" name="examTime" type="text" class="text" value="${examRecord.examTime}"/></td>
     			</tr>
     			<tr>
 					<td>用时：</td>

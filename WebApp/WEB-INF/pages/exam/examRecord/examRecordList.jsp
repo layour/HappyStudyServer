@@ -11,7 +11,7 @@
 			});
 			$("#query").bind("click",function(){
 				$('#dg').datagrid('load',{
-					search_eamTime:$("#eamTime").val(),
+					search_examTime:$("#examTime").val(),
 				});
 			});
 		});
@@ -33,7 +33,7 @@
        		</div>
        		<div data-options="region:'center',border:false" align="right">
     			考试时间：
-    			<input id="eamTime" name="eamTime" type="text" class="easyui-textbox textbox" value="${param.search_eamTime}"/>
+    			<input id="examTime" name="examTime" type="text" class="easyui-textbox textbox" value="${param.search_examTime}"/>
     			<a class="easyui-linkbutton" id="query" href="javascript:void(0)">查询</a>
        		</div>
 		</div>
@@ -43,7 +43,7 @@
 	        <thead>
 	            <tr>
 	                <th data-options="field:'examScore',width:80">考试得分</th>
-	                <th data-options="field:'eamTime',width:80">考试时间</th>
+	                <th data-options="field:'examTime',width:80">考试时间</th>
 	                <th data-options="field:'useTime',width:80">用时</th>
 	                <th data-options="field:'userId',width:80">用户ID</th>
 	                <th data-options="field:'paperId',width:80">试卷ID</th>

@@ -7,19 +7,19 @@
   <!--分页查询-->
   <select id="searchByPage" parameterType="map" resultMap="ExamRecordMap">SELECT <include refid="columns"/> FROM HS_EXAM_RECORD
     <where>
-      <if test="eamTime != null and eamTime != ''">EXAM_TIME = #{eamTime}</if>
+      <if test="examTime != null and examTime != ''">EXAM_TIME = #{examTime}</if>
     </where>
     ORDER BY EXAM_TIME DESC
   </select>
   <!--插入记录-->
-  <insert id="save" parameterType="ExamRecord">INSERT INTO HS_EXAM_RECORD (<include refid="columns"/>) VALUES (#{examRecordId},#{examScore},#{eamTime},#{useTime},#{userId},#{paperId})</insert>
+  <insert id="save" parameterType="ExamRecord">INSERT INTO HS_EXAM_RECORD (<include refid="columns"/>) VALUES (#{examRecordId},#{examScore},#{examTime},#{useTime},#{userId},#{paperId})</insert>
   <!--删除记录-->
   <delete id="delete">DELETE FROM HS_EXAM_RECORD WHERE EXAM_RECORD_ID=#{examRecordId}</delete>
   <!--修改记录-->
   <update id="update" parameterType="ExamRecord">UPDATE HS_EXAM_RECORD
     <set>
       <if test="examScore != null">EXAM_SCORE = #{examScore}, </if>
-      <if test="eamTime != null">EXAM_TIME = #{eamTime}, </if>
+      <if test="examTime != null">EXAM_TIME = #{examTime}, </if>
       <if test="useTime != null">USE_TIME = #{useTime}, </if>
       <if test="userId != null">USER_ID = #{userId}, </if>
       <if test="paperId != null">PAPER_ID = #{paperId}, </if>
@@ -29,7 +29,7 @@
   <resultMap type="ExamRecord" id="ExamRecordMap">
     <result column="EXAM_RECORD_ID" property="examRecordId"/>
     <result column="EXAM_SCORE" property="examScore"/>
-    <result column="EXAM_TIME" property="eamTime"/>
+    <result column="EXAM_TIME" property="examTime"/>
     <result column="USE_TIME" property="useTime"/>
     <result column="USER_ID" property="userId"/>
     <result column="PAPER_ID" property="paperId"/>

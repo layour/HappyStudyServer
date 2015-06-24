@@ -22,7 +22,7 @@
 			</tr>
 			<tr>
 				<td>考试时间：</td>
-				<td><input name="eamTime" value="${examRecord.eamTime}" class="easyui-validatebox textbox" disabled="disabled" /></td>
+				<td><input name="examTime" value="${examRecord.examTime}" class="easyui-validatebox textbox" disabled="disabled" /></td>
 			</tr>
 			<tr>
 				<td>用时：</td>

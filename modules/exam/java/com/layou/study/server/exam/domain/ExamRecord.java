@@ -14,7 +14,7 @@ public class ExamRecord extends DomainBase implements Serializable{
 
 	private String examRecordId;
 	private String examScore;
-	private String eamTime;
+	private String examTime;
 	private String useTime;
 	private String userId;
 	private String paperId;
@@ -39,12 +39,12 @@ public class ExamRecord extends DomainBase implements Serializable{
 		this.examScore = examScore;
 	}
 
-	public String getEamTime() {
-		return this.eamTime;
+	public String getExamTime() {
+		return this.examTime;
 	}
 
-	public void setEamTime(String eamTime) {
-		this.eamTime = eamTime;
+	public void setExamTime(String examTime) {
+		this.examTime = examTime;
 	}
 
 	public String getUseTime() {

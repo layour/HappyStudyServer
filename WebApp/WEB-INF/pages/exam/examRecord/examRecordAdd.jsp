@@ -32,7 +32,7 @@
     			</tr>
     			<tr class="control-group">
     				<td>考试时间：</td>
-    				<td><input id="eamTime" name="eamTime" type="text" class="text"/></td>
+    				<td><input id="examTime" name="examTime" type="text" class="text"/></td>
     			</tr>
     			<tr class="control-group">
     				<td>用时：</td>

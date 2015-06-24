@@ -52,7 +52,7 @@ public class ExamRecordController {
 	 * @return
 	 */
 	@RequestMappingName(value = "查询列表")
-	@RequestMapping(value = "list", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
+	@RequestMapping(value = "list", method = RequestMethod.GET)
 	public @ResponseBody String list(@RequestParam(value = "page", defaultValue = "1") int pageNumber,
 			@RequestParam(value = "page.size", defaultValue = PageParameter.DEFAULT_PAGE_SIZE+"") int pageSize, 
 			Model model, ServletRequest request) {
@@ -89,7 +89,7 @@ public class ExamRecordController {
 	 * @return
 	 */
 	@RequestMappingName(value = "保存")
-	@RequestMapping(value = "save", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
+	@RequestMapping(value = "save", method = RequestMethod.POST)
 	public String save(@Valid ExamRecord examRecord, RedirectAttributes redirectAttributes) {
 		examRecordService.save(examRecord);
 		return "exam/examRecord/examRecordList";
@@ -115,7 +115,7 @@ public class ExamRecordController {
 	 * @return
 	 */
 	@RequestMappingName(value = "修改")
-	@RequestMapping(value = "update", method = { RequestMethod.GET, RequestMethod.POST }, produces = "application/json; charset=utf-8")
+	@RequestMapping(value = "update", method = RequestMethod.POST)
 	public String update(@Valid @ModelAttribute("examRecord") ExamRecord examRecord, RedirectAttributes redirectAttributes) {
 		examRecordService.update(examRecord);
 		redirectAttributes.addFlashAttribute("message", "更新成功");
